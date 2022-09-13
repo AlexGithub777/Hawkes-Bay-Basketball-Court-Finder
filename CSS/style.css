@@ -94,7 +94,7 @@ header {
 }
 
 section {
-  min-height: 16.5vh;
+  max-height: 100vh;
   border-style: solid;
   border-width: 1px;  
 }
