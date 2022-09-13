@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<!--Head Section-->
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Public Basketball Courts in Hawkes Bay</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<!--Body Section-->
+<body>
+    <!--Header Area-->
+    <header>
+        <div class="header-image">
+            <img src="Images/basketball_icon.png" alt="Basketball icon">
+        </div>
+        <div class="header-text">
+            <h1>Public Basketball Courts in Hawkes Bay</h1>
+        </div>       
+    </header>
+    <div class="nav" id="topNav">
+        <a href="home.html" class="active">Home</a>
+        <a href="napier.html">Napier</a>
+        <a href="hastings.html">Hastings</a>
+        <a href="wairoa.html">Wairoa</a>
+        <a href="central_hawkes bay.html">Central Hawkes Bay</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="openMenu()">&#9776;</a>
+      </div>
+        
+    <main>
+        <section>
+            <h1>Find Public Basketball Courts in Hawkes Bay</h1>
+            <form method="get" action="http://www.google.com/search" target="_blank">
+                <label>Keywords </label>
+                <input type="text" name="q" />
+                <input type="submit" value="SEARCH"/>
+            </form>
+        </section>
+    </main>
+    <script>
+        function openMenu() {
+          var x = document.getElementById("topNav");
+          if (x.className === "nav") {
+            x.className += " responsive";
+          } else {
+            x.className = "nav";
+          }
+        }
+    </script>
+</body>
+</html>
