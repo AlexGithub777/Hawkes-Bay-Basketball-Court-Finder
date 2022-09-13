@@ -36,6 +36,7 @@ header {
 .nav {
   overflow: hidden;
   background-color: gray;
+  
 }
   
 .nav a {
@@ -64,11 +65,11 @@ header {
 }
   
 .a:hover {
-  background-color: #ddd;
+  background-color: white;
   color: black;
 }
   
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 695px) {
   .nav a:not(:first-child) {
     display: none;
   }
@@ -78,7 +79,7 @@ header {
   }
 }
   
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 695px) {
   .nav.responsive {position: relative;}
   .nav.responsive .icon {
     position: absolute;
@@ -92,26 +93,65 @@ header {
   }
 }
 
-section h1 {
-    text-align: center;
-    color:  gray;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 30px;
-    font-family: 'Roboto', sans-serif;
+section {
+  height: 16.5vh;
+  border-style: solid;
+  border-width: 1px;  
 }
 
-form {
-    display: block;
-    text-align: center;
-    }
-    form input[type="submit"] {
-    padding: 5px 20px 5px 20px;
-    background-color: rgb(12, 203, 76);
-    }
-    form input[type="text"] {
-    padding: 5px 20px 5px 20px;
-    }
+section h1 {
+  text-align: center;
+  color:  gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: auto;
+  padding-right: auto;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  }
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background-color: gray;
+  width: 80vw;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 20px;
+  border-radius: 60px;
+}
+
+.searchBox input {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  font-size: 14px;
+  color: white;
+}
+
+.searchBox button img{
+  width: 15px;
+}
+
+
+.searchBox button {
+  border: 0;
+  border-radius: 50%;
+  margin-right: -14px;
+  width: 30px;
+  height: 30px;
+  background-color: #fa8320;
+  cursor: pointer;
+}
+
+
+::placeholder {
+  color: white;
+  font-size: 14px;
+}
+
+
+
 
