@@ -9,7 +9,7 @@
 }
 
 header {
-  min-height: 10vh;
+  min-height: 72.2px;
   background-color: gray;
   color: white;
   display: flex;
@@ -34,8 +34,12 @@ header {
 }
 
 .nav {
+
+  min-height: 5vh;
   overflow: hidden;
   background-color: gray;
+  border-style: solid;
+  border-width: 1px; 
   
 }
   
