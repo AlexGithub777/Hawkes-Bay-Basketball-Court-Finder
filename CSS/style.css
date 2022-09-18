@@ -38,8 +38,7 @@ header {
   min-height: 4vh;
   overflow: hidden;
   background-color: gray;
-  border-style: solid;
-  border-width: 1px; 
+  
   
 }
   
@@ -99,8 +98,7 @@ header {
 
 .section_1 {
   max-height: 100vh;
-  border-style: solid;
-  border-width: 1px;  
+   
 }
 
 .section_1 h1 {
