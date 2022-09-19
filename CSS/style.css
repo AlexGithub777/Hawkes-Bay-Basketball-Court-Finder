@@ -106,7 +106,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 1275px) {
+@media only screen and (max-width: 1274px) {
 	.courtsBox {
     flex-direction: column;
     margin: 10px 25px;
