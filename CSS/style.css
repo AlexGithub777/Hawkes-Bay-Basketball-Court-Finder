@@ -9,7 +9,7 @@
 }
 
 header {
-  min-height: 72.2px;
+  height: 10vh;
   background-color: gray;
   color: white;
   display: flex;
@@ -35,7 +35,7 @@ header {
 
 .nav {
 
-  min-height: 4vh;
+  min-height: 4.5vh;
   overflow: hidden;
   background-color: gray;
   
@@ -96,6 +96,23 @@ header {
   }
 }
 
+@media only screen and (min-width: 1275px) {
+	.courtsBox {
+    flex-direction: row;
+    margin: 10px 250px;
+	} 
+  .courtBox {
+    margin: 0px 25px;
+  }
+}
+
+@media only screen and (max-width: 1275px) {
+	.courtsBox {
+    flex-direction: column;
+    margin: 10px 25px;
+	} 
+}
+
 .section_1 {
   max-height: 100vh;
    
@@ -104,8 +121,7 @@ header {
 .section_1 h1 {
   text-align: center;
   color:  gray;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 10px;
   
   font-size: 26px;
   font-family: 'Roboto', sans-serif;
@@ -161,8 +177,9 @@ header {
 .section_2 h2 {
   text-align: center;
   color:  gray;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 25px;
+  
+  
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
 }
@@ -171,13 +188,15 @@ header {
 	
 	
 	/*Use display: flex to change the layout*/
+	
 	display: flex;
-	flex-direction: row;
-  margin: 15px;
+  
   
 }
 
 .courtBox {
+  
+  margin-bottom: 25px;
 	flex: 1;
 	background-color: #fa8320;
 	width: 100%;
@@ -220,3 +239,4 @@ header {
   display: flex;
   
 }
+
