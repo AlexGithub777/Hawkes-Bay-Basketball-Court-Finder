@@ -41,10 +41,10 @@
         <div class="section_1">
             <h1>Find Public Basketball Courts in Hawkes Bay</h1>
             <br>
-            <form action="" class="searchBox">
-                <input type="text" placeholder="Enter a place name or address" name="q">
+            <div class="searchBox">
+                <input type="text" placeholder="Enter a court or place name" aria-label="Search courts" class="form-control" onkeyup="searchFilter()">
                 <button type="'submmit"><img src="Images/search.png"></button>
-            </form>
+            </div>
         </div>
         <div class="section_2">
             <h2>Top Rated Courts in Hawkes Bay</h2>
@@ -53,37 +53,45 @@
                 <div class="courtBox">
                     <img src="Images/marine parade.jpeg">
                     <br>
-                    <h3>Marine Parade</h3>
-                    <br>
-                    <p>Napier</p>
-                    <br>
-                    <p>👍 31 👎 4</p>
-                    <br>
+                    <div class="courtBody">
+                        <h3>Marine Parade</h3>
+                        <br>
+                        <p>Napier</p>
+                        <br>
+                        <p>👍 31 👎 4</p>
+                        <br>
+                    </div>
                     <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a></div>
                 </div>
                 <!--court 2-->
                 <div class="courtBox">
                     <img src="Images/fitzgerald_place_reserve.jpg">
                     <br>
-                    <h3 class="court2_name">Fitzgerald Place Reserve</h3>
-                    <br>
-                    <p>Napier</p>
-                    <br>
-                    <p>👍 21 👎 5</p>
-                    <br>
+                    <div class="courtBody">
+                        <h3>Fitzgerald Place Reserve</h3>
+                        <br>
+                        <p>Napier</p>
+                        <br>
+                        <p>👍 21 👎 5</p>
+                        <br>
+                    </div>
                     <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a></div>
                 </div>
-                <!--Court 3-->
+                 <!--Court 3-->
                  <div class="courtBox">
                     <img src="Images/flaxmere_park.jpg">
                     <br>
-                    <h3>Flaxmere Park</h3>
-                    <br>
-                    <p>Hastings</p>
-                    <br>
-                    <p>👍 16 👎 2</p>
-                    <br>
+                    <div class="courtBody">
+                        <h3>Flaxmere Park</h3>
+                        <br>
+                        <p>Hastings</p>
+                        <br>
+                        <p>👍 16 👎 2</p>
+                        <br>
+                    </div>
                     <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a></div>
+                </div>
+
             </div>
         </div>
         </main>
@@ -96,6 +104,21 @@
           } else {
             x.className = "nav";
           }
+        }
+        var searchFilter = () => {
+            const input = document.querySelector(".form-control");
+            const courts = document.getElementsByClassName("courtBox");
+            let filter = input.value
+            for (let i = 0; i < courts.length; i++) {
+                let title = courts[i].querySelector(".courtBody")
+            
+            
+            if (title.textContent.toLowerCase().indexOf(filter.toLowerCase()) > -1) {
+                courts[i].classList.remove("none") 
+            } else {
+                courts[i].classList.add("none")
+            }
+            }
         }
     </script>
 </body>
