@@ -9,7 +9,9 @@
 }
 
 header {
-  height: 10vh;
+  
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: gray;
   color: white;
   display: flex;
@@ -27,8 +29,7 @@ header {
 .header-text {
   display: flex;
   padding-left: 20px;
-  padding-top: auto;
-  padding-bottom: auto;
+  
   font-size: 11px;
   font-family: 'Roboto', sans-serif;
 }
@@ -72,7 +73,7 @@ header {
   color: black;
 }
   
-@media screen and (max-width: 695px) {
+@media screen and (max-width: 713px) {
   .nav a:not(:first-child) {
     display: none;
   }
@@ -82,7 +83,7 @@ header {
   }
 }
   
-@media screen and (max-width: 695px) {
+@media screen and (max-width: 713px) {
   .nav.responsive {position: relative;}
   .nav.responsive .icon {
     position: absolute;
@@ -98,13 +99,6 @@ header {
 
 
 
-@media only screen and (max-width: 426px) {
-	.courtsBox {
-    justify-content: space-evenly;
-    flex-direction: column;
-    margin: 10px 25px;
-	} 
-}
 
 
 
@@ -118,8 +112,9 @@ header {
 .section_1 h1 {
   text-align: center;
   color:  gray;
-  padding: 10px 10px;
-  
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 20px;
   font-size: 26px;
   font-family: 'Roboto', sans-serif;
   }
@@ -174,9 +169,9 @@ header {
 .section_2 h2 {
   text-align: center;
   color:  gray;
-  padding-top: 25px;
-  
-  
+  padding-top: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
 }
@@ -188,14 +183,13 @@ header {
 	display: flex;
 	flex-direction: row;
   flex-wrap: wrap;
-  margin: 10px 0px;
-  justify-content: space-evenly;
+  justify-content: center;
   
 }
 
 .courtBox {
+  margin: 15px 35px;
   
-  margin-bottom: 25px;
 	
 	background-color: #fa8320;
 	width: 270px;
@@ -211,10 +205,9 @@ header {
 
 }
 
-.courtBox h3 {
-  font-size: 90%;
 
-}
+
+
 .courtsBox img {
   
   width: 100%;
