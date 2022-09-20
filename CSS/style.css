@@ -96,22 +96,19 @@ header {
   }
 }
 
-@media only screen and (min-width: 1275px) {
-	.courtsBox {
-    flex-direction: row;
-    margin: 10px 250px;
-	} 
-  .courtBox {
-    margin: 0px 25px;
-  }
-}
 
-@media only screen and (max-width: 1274px) {
+
+@media only screen and (max-width: 426px) {
 	.courtsBox {
+    justify-content: space-evenly;
     flex-direction: column;
     margin: 10px 25px;
 	} 
 }
+
+
+
+
 
 .section_1 {
   max-height: 100vh;
@@ -188,18 +185,20 @@ header {
 	
 	
 	/*Use display: flex to change the layout*/
-	
 	display: flex;
-  
+	flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px 0px;
+  justify-content: space-evenly;
   
 }
 
 .courtBox {
   
   margin-bottom: 25px;
-	flex: 1;
+	
 	background-color: #fa8320;
-	width: 100%;
+	width: 270px;
   height: fit-content;
 	/*Create box equal size*/
 	
@@ -212,6 +211,10 @@ header {
 
 }
 
+.courtBox h3 {
+  font-size: 90%;
+
+}
 .courtsBox img {
   
   width: 100%;
