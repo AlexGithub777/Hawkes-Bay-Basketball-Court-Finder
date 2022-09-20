@@ -91,7 +91,6 @@
                     </div>
                     <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a></div>
                 </div>
-
             </div>
         </div>
         </main>
@@ -111,13 +110,15 @@
             let filter = input.value
             for (let i = 0; i < courts.length; i++) {
                 let title = courts[i].querySelector(".courtBody")
-            if (title.textContent.toLowerCase().indexOf(filter.toLowerCase()) > -1) {
-                courts[i].classList.remove("none") 
+            if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
+                courts[i].style.display = "block"
+                
             } else {
-                courts[i].classList.add("none")
+                courts[i].style.display = "none"
             }
             }
         }
+        
     </script>
 </body>
 </html>
