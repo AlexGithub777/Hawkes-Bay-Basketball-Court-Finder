@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="section_2">
-            <h2>Top Rated Courts in Hawkes Bay</h2>
+            <h2>Courts in Hawkes Bay</h2>
             <div class="courtsBox">
                 <!--court 1-->
                 <div class="courtBox">
@@ -111,8 +111,6 @@
             let filter = input.value
             for (let i = 0; i < courts.length; i++) {
                 let title = courts[i].querySelector(".courtBody")
-            
-            
             if (title.textContent.toLowerCase().indexOf(filter.toLowerCase()) > -1) {
                 courts[i].classList.remove("none") 
             } else {
