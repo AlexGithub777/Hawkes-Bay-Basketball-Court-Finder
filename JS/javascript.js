@@ -21,8 +21,6 @@ for(let i = 0 ; i < courts.length ; i++) {
 
                         htmlContent += courtContent;
 }
-console.log(htmlContent);
-
 
 document.getElementById("courtsBox").innerHTML = htmlContent;
 
