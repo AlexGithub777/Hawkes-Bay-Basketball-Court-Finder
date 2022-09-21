@@ -1,4 +1,4 @@
-let courts = [{id: 0, name: "Marine Parade", place: "Napier", thumbs_up: 21, thumbs_down: 6, image_URL: "Images/marine parade.jpeg"},
+let courts = [{id: 0, name: "Marine Parade", place: "Napier", thumbs_up: 21, thumbs_down: 6, image_URL: "Images/marine_parade.jpeg"},
               {id: 1, name: "Fitzgerald Place Reserve", place: "Napier", thumbs_up: 18, thumbs_down: 6, image_URL: "Images/fitzgerald_place_reserve.jpg"},
               {id: 2, name: "Flaxmere Park", place: "Hastings", thumbs_up: 16, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg"}]
 
@@ -17,14 +17,16 @@ for(let i = 0 ; i < courts.length ; i++) {
                                     <br>
                                 </div>
                         <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a>
-                        </div>`;
+                        </div></div>`;
 
                         htmlContent += courtContent;
 }
-display();
-function display() {
-    document.getElementsByClassName("courtsBox").InnerHTML = htmlContent;
-}
+console.log(htmlContent);
+
+
+document.getElementById("courtsBox").innerHTML = htmlContent;
+
+
 
 
 
