@@ -9,15 +9,15 @@ for(let i = 0 ; i < courts.length ; i++) {
     let courtContent = `<div class="courtBox">
                             <img src=${courts[i].image_URL}>
                             <br>
-                                <div class="courtBody">
-                                    <h3>${courts[i].name}</h3>
-                                    <br>
-                                    <p>${courts[i].place}</p>
-                                    <br>
-                                    <p>👍 ${courts[i].thumbs_up} 👎 ${courts[i].thumbs_down}</p>
-                                    <br>
-                                </div>
-                        <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a>
+                            <div class="courtBody">
+                                <h3>${courts[i].name}</h3>
+                                <br>
+                                <p>${courts[i].place}</p>
+                                <br>
+                                <p>👍 ${courts[i].thumbs_up} 👎 ${courts[i].thumbs_down}</p>
+                                <br>
+                            </div>
+                            <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a>
                         </div>`;
 
                         htmlContent += courtContent;
