@@ -193,12 +193,18 @@ header {
 .courtBox {
   margin: 15px 35px;
   display: none;
-	
+	box-shadow: 0 0 1rem rgb(0 0 0 / 0.25);
 	background-color: #fa8320;
 	width: 270px;
   height: fit-content;
+  transition: scale 350ms ease, opacity 350ms linear;
 	/*Create box equal size*/
 	
+}
+
+.courtsBox:has(.courtBox:hover) .courtBox:not(:hover) {
+  scale: 0.9;
+  opacity: 0.7;
 }
 
 .courtBox h3, p {
@@ -208,6 +214,9 @@ header {
 
 }
 
+.courtsBox:has(.courtBox:hover) {
+  border: red 5px;
+}
 
 
 
