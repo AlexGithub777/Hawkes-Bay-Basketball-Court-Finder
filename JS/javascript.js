@@ -82,7 +82,7 @@ var Hastings = () => {
 
 window.onload = function() {
     if (window.location.href.indexOf('napier.html') > -1) {
-      Napier();
+        Napier();
     }
     if (window.location.href.indexOf('hastings.html') > -1) {
         Hastings();
