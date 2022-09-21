@@ -184,9 +184,32 @@ header {
   
 }
 
+.courtsBoxs {
+	
+	
+	/*Use display: flex to change the layout*/
+	display: flex;
+	flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
 .courtBox {
   margin: 35px;
   display: none;
+	box-shadow: 0 0 1rem rgb(0 0 0 / 0.25);
+	background-color: #fa8320;
+	width: 270px;
+  height: 349px;
+  transition: scale 350ms ease, opacity 350ms linear;
+	/*Create box equal size*/
+	
+}
+
+.courtBoxs {
+  margin: 35px;
+ 
 	box-shadow: 0 0 1rem rgb(0 0 0 / 0.25);
 	background-color: #fa8320;
 	width: 270px;
@@ -201,6 +224,11 @@ header {
   opacity: 0.7;
 }
 
+.courtsBoxs:has(.courtBoxs:hover) .courtBoxs:not(:hover) {
+  scale: 0.9;
+  opacity: 0.7;
+}
+
 .courtBox h3, p {
   text-align: center;
   font-family: 'Roboto', sans-serif;
@@ -208,17 +236,41 @@ header {
 
 }
 
+.courtBoxs h3, p {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+
+}
+
+#searchText {
+  display: none;
+}
 
 .courtsBox img {
   
   width: 270px;
   height: 180.36px;
+
+}
+
+.courtsBoxs img {
   
-  
+  width: 270px;
+  height: 180.36px;
 
 }
 
 .courtBox .button-1 {
+  display: block;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.courtBoxs .button-1 {
   display: block;
 	text-align: center;
 	color: white;
@@ -235,4 +287,6 @@ header {
   display: flex;
   
 }
+
+
 

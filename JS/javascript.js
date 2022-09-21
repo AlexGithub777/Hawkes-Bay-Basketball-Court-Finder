@@ -45,9 +45,10 @@ var searchFilter = () => {
         let title = courts[i].querySelector(".courtBody")
     if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
         courts[i].style.display = "block"
-
+        document.getElementById("searchText").style.display = "block"
     } else {
         courts[i].style.display = "none"
+        document.getElementById("searchText").style.display = "none"
     }
     }
 }
@@ -79,6 +80,21 @@ var Hastings = () => {
     }
     }
 }
+
+var Home= () => {
+    const courts = document.getElementsByClassName("courtBox");
+    let filter = "Hastings"
+    for (let i = 0; i < courts.length; i++) {
+        let title = courts[i].querySelector(".courtBody")
+    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
+        courts[i].style.display = "block"
+
+    } else {
+        courts[i].style.display = "none"
+    }
+    }
+}
+
 
 window.onload = function() {
     if (window.location.href.indexOf('napier.html') > -1) {
