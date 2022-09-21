@@ -11,7 +11,7 @@
 
 
 header {
-  
+  height: fit-content;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: gray;
@@ -100,14 +100,8 @@ header {
 }
 
 
-
-
-
-
-
-
 .section_1 {
-  max-height: 100vh;
+  height: fit-content;
    
 }
 
@@ -123,13 +117,13 @@ header {
 
 .searchBox {
   display: flex;
-  align-items: center;
+  
   background-color: gray;
   width: 80vw;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  padding: 5px 20px;
+  padding: 0.75rem 20px;
   border-radius: 60px;
 }
 
@@ -163,7 +157,7 @@ header {
   font-size: 14px;
 }
 .section_2 {
-  max-height: 100vh;
+  height: fit-content;
   
 }
   
@@ -191,8 +185,7 @@ header {
 }
 
 .courtBox {
-  margin: 15px 35px;
-  display: none;
+  margin: 35px;
 	box-shadow: 0 0 1rem rgb(0 0 0 / 0.25);
 	background-color: #fa8320;
 	width: 270px;
@@ -214,11 +207,6 @@ header {
 
 }
 
-.courtsBox:has(.courtBox:hover) {
-  border: red 5px;
-}
-
-
 
 .courtsBox img {
   
@@ -239,8 +227,7 @@ header {
 }
 
 .button-wrapper {
-  min-height: 7vh;
-  max-height: 14vh;
+  height: 3rem;
   background-color: gray;
   justify-content: center;
   align-items: center;

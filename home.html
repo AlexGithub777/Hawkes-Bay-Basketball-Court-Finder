@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
 </head>
 
 <!--Body Section-->
@@ -43,82 +44,16 @@
             <br>
             <div class="searchBox">
                 <input type="text" placeholder="Enter a court or place name" aria-label="Search courts" class="form-control" onkeyup="searchFilter()">
-                <button type="'submmit"><img src="Images/search.png"></button>
+                
             </div>
         </div>
         <div class="section_2">
             <h2>Courts in Hawkes Bay</h2>
             <div class="courtsBox">
-                <!--court 1-->
-                <div class="courtBox">
-                    <img src="Images/marine parade.jpeg">
-                    <br>
-                    <div class="courtBody">
-                        <h3>Marine Parade</h3>
-                        <br>
-                        <p>Napier</p>
-                        <br>
-                        <p>👍 31 👎 4</p>
-                        <br>
-                    </div>
-                    <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a></div>
-                </div>
-                <!--court 2-->
-                <div class="courtBox">
-                    <img src="Images/fitzgerald_place_reserve.jpg">
-                    <br>
-                    <div class="courtBody">
-                        <h3>Fitzgerald Place Reserve</h3>
-                        <br>
-                        <p>Napier</p>
-                        <br>
-                        <p>👍 21 👎 5</p>
-                        <br>
-                    </div>
-                    <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a></div>
-                </div>
-                 <!--Court 3-->
-                 <div class="courtBox">
-                    <img src="Images/flaxmere_park.jpg">
-                    <br>
-                    <div class="courtBody">
-                        <h3>Flaxmere Park</h3>
-                        <br>
-                        <p>Hastings</p>
-                        <br>
-                        <p>👍 16 👎 2</p>
-                        <br>
-                    </div>
-                    <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a></div>
-                </div>
             </div>
         </div>
         </main>
     </main>
-    <script>
-        function openMenu() {
-          var x = document.getElementById("topNav");
-          if (x.className === "nav") {
-            x.className += " responsive";
-          } else {
-            x.className = "nav";
-          }
-        }
-        var searchFilter = () => {
-            const input = document.querySelector(".form-control");
-            const courts = document.getElementsByClassName("courtBox");
-            let filter = input.value
-            for (let i = 0; i < courts.length; i++) {
-                let title = courts[i].querySelector(".courtBody")
-            if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
-                courts[i].style.display = "block"
-                
-            } else {
-                courts[i].style.display = "none"
-            }
-            }
-        }
-        
-    </script>
+    <script src="JS/javascript.js"></script>
 </body>
 </html>
