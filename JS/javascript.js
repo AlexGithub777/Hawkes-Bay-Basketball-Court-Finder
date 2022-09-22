@@ -4,10 +4,6 @@ let courts = [{id: 0, name: "Marine Parade", place: "Napier", thumbs_up: 21, thu
               {id: 3, name: "Flaxmere Park", place: "Hastings", thumbs_up: 101, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg"}]
             
 
-
-
-
-
 let htmlContent = "";
 
 for(let i = 0 ; i < courts.length ; i++) {
@@ -107,6 +103,15 @@ var Hastings = () => {
     }
 }
 
+var UpVoteMarineParde= () => {
+    objIndex = courts.findIndex((obj => obj.id == 0));
+    console.log("Before update: ", courts[objIndex]);
+    newcount = courts[objIndex].thumbs_up + 1;
+    courts[objIndex].thumbs_up = newcount;
+    console.log("After update: ", courts[objIndex])
+    
+}
+
 
 var TopRated= () => {
     
@@ -126,7 +131,7 @@ var TopRated= () => {
                                     <p>👍 ${courts[i].thumbs_up} 👎 ${courts[i].thumbs_down}</p>
                                     <br>
                                 </div>
-                        <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a>
+                        <div class="button-wrapper"><a class="button-1" onclick="UpVoteMarineParde()">View Court</a>
                         </div></div>`;
 
                         htmlContent += courtContent;
