@@ -239,6 +239,15 @@ header {
 
 #searchText {
   display: none;
+  
+}
+
+#no_results {
+  margin-top: 1rem;
+  display: none;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: gray;
 }
 
 .courtsBox img {

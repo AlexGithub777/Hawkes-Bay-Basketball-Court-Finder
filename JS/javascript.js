@@ -46,18 +46,37 @@ function openMenu() {
 var searchFilter = () => {
     const input = document.querySelector(".form-control");
     const courts = document.getElementsByClassName("courtBox");
+    let searchResult = 0
     let filter = input.value
+    if (filter.length > 0) {
+        document.getElementById("searchText").style.display = "block"; 
+    } else {
+        document.getElementById("searchText").style.display = "none";
+    }
+    
     for (let i = 0; i < courts.length; i++) {
         let title = courts[i].querySelector(".courtBody")
     if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
-        courts[i].style.display = "block"
-        document.getElementById("searchText").style.display = "block"
+        courts[i].style.display = "block";
+        searchResult ++
     } else {
-        courts[i].style.display = "none"
-        document.getElementById("searchText").style.display = "none"
+        courts[i].style.display = "none";   
     }
     }
+
+    if (searchResult == 0 && filter.length > 0) {
+        document.getElementById("no_results").style.display = "block";
+        document.getElementById("searchText").style.display = "none";
+
+    } else {
+        document.getElementById("no_results").style.display = "none";
+    }
+    
+    
 }
+
+
+
 
 var Napier = () => {
     const courts = document.getElementsByClassName("courtBox");
