@@ -58,6 +58,7 @@ var searchFilter = () => {
         let title = courts[i].querySelector(".courtBody")
     if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
         courts[i].style.display = "block";
+        
         searchResult ++
     } else {
         courts[i].style.display = "none";   
@@ -108,6 +109,7 @@ var Hastings = () => {
 
 
 var TopRated= () => {
+    
     courts.sort((a, b) => b.thumbs_up - a.thumbs_up);
     let Top3RatedCourts = courts.slice(0, 3);
     let htmlContent = "";

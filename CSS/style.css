@@ -126,31 +126,24 @@ header {
   margin-right: auto;
   padding: 0.75rem 20px;
   border-radius: 60px;
+  
 }
 
-.searchBox input {
+.form-control {
   background: transparent;
   flex: 1;
   border: 0;
   outline: none;
   font-size: 14px;
   color: white;
+  line-height: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  
 }
 
-.searchBox button img{
-  width: 15px;
-}
 
 
-.searchBox button {
-  border: 0;
-  border-radius: 50%;
-  margin-right: -14px;
-  width: 30px;
-  height: 30px;
-  background-color: #fa8320;
-  cursor: pointer;
-}
 
 
 ::placeholder {
@@ -171,20 +164,18 @@ header {
   padding-right: 15px;
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
+  
 }
 
 
 .courtsBox {
-	
-	
 	/*Use display: flex to change the layout*/
 	display: flex;
 	flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; 
   
 }
-
 
 .Top3RatedCourts {
   margin: 35px;
@@ -206,10 +197,37 @@ header {
 	width: 270px;
   height: 349px;
   transition: scale 350ms ease, opacity 350ms linear;
+  
 	/*Create box equal size*/
 	
 }
 
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 .courtsBox:has(.courtBox:hover) .courtBox:not(:hover) {
   scale: 0.9;
@@ -248,6 +266,13 @@ header {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   color: gray;
+  transition: scale 350ms ease, opacity 350ms linear;
+  animation: fadeIn 0.25s;
+  -webkit-animation: fadeIn 0.25s;
+  -moz-animation: fadeIn 0.25s;
+  -o-animation: fadeIn 0.25s;
+  -ms-animation: fadeIn 0.25s;
+  
 }
 
 .courtsBox img {
@@ -257,12 +282,6 @@ header {
 
 }
 
-.courtsBoxs img {
-  
-  width: 270px;
-  height: 180.36px;
-
-}
 
 .courtBox .button-1 {
   display: block;
