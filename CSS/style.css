@@ -167,6 +167,17 @@ header {
   
 }
 
+.section_3 h2 {
+  text-align: center;
+  color:  gray;
+  padding-top: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
 
 .courtsBox {
 	/*Use display: flex to change the layout*/
@@ -310,5 +321,36 @@ header {
   
 }
 
+footer {
+  min-height: 12.5vh;
+  
+  background-color: gray;
+}
 
+.footer_icons {
+  text-align: center;
+  
+}
+
+.fa-facebook {
+  
+  color: white;
+
+}
+
+.fa-youtube {
+  color: white;
+}
+
+.fa-twitter {
+  color: white;
+}
+
+.fa-instagram {
+  color: white;
+}
+
+.fa-snapchat {
+  color: white;
+}
 

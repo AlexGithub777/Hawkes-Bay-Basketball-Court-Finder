@@ -1,7 +1,6 @@
-let courts = [{id: 0, name: "Marine Parade", place: "Napier", thumbs_up: 21, thumbs_down: 6, image_URL: "Images/marine_parade.jpeg"},
-              {id: 1, name: "Fitzgerald Place Reserve", place: "Napier", thumbs_up: 18, thumbs_down: 6, image_URL: "Images/fitzgerald_place_reserve.jpg"},
-              {id: 2, name: "Flaxmere Park", place: "Hastings", thumbs_up: 16, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg"},
-              {id: 3, name: "Flaxmere Park", place: "Hastings", thumbs_up: 101, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg"}]
+let courts = [{id: 0, name: "Marine Parade", place: "Napier", thumbs_up: 21, thumbs_down: 6, image_URL: "Images/marine_parade.jpeg", link_URL: "Courts/marine_parade.html"},
+              {id: 1, name: "Fitzgerald Place Reserve", place: "Napier", thumbs_up: 18, thumbs_down: 6, image_URL: "Images/fitzgerald_place_reserve.jpg", link_URL: "Courts/fitzgerald_place_reserve.html"},
+              {id: 2, name: "Flaxmere Park", place: "Hastings", thumbs_up: 16, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg", link_URL: "Courts/flaxmere_park.html"}]
             
 
 let htmlContent = "";
@@ -18,7 +17,7 @@ for(let i = 0 ; i < courts.length ; i++) {
                                     <p>👍 ${courts[i].thumbs_up} 👎 ${courts[i].thumbs_down}</p>
                                     <br>
                                 </div>
-                        <div class="button-wrapper"><a class="button-1" href="https://www.google.co.nz//">View Court</a>
+                        <div class="button-wrapper"><a class="button-1" href=${courts[i].link_URL}>View Court</a>
                         </div></div>`;
 
                         htmlContent += courtContent;
@@ -103,13 +102,32 @@ var Hastings = () => {
     }
 }
 
-var UpVoteMarineParde= () => {
-    objIndex = courts.findIndex((obj => obj.id == 0));
-    console.log("Before update: ", courts[objIndex]);
-    newcount = courts[objIndex].thumbs_up + 1;
-    courts[objIndex].thumbs_up = newcount;
-    console.log("After update: ", courts[objIndex])
-    
+var Wairoa = () => {
+    const courts = document.getElementsByClassName("courtBox");
+    let filter = "Wairoa"
+    for (let i = 0; i < courts.length; i++) {
+        let title = courts[i].querySelector(".courtBody")
+    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
+        courts[i].style.display = "block"
+
+    } else {
+        courts[i].style.display = "none"
+    }
+    }
+}
+
+var CHB = () => {
+    const courts = document.getElementsByClassName("courtBox");
+    let filter = "Central Hawkes Bay"
+    for (let i = 0; i < courts.length; i++) {
+        let title = courts[i].querySelector(".courtBody")
+    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
+        courts[i].style.display = "block"
+
+    } else {
+        courts[i].style.display = "none"
+    }
+    }
 }
 
 
@@ -131,7 +149,7 @@ var TopRated= () => {
                                     <p>👍 ${courts[i].thumbs_up} 👎 ${courts[i].thumbs_down}</p>
                                     <br>
                                 </div>
-                        <div class="button-wrapper"><a class="button-1" onclick="UpVoteMarineParde()">View Court</a>
+                        <div class="button-wrapper"><a class="button-1" href=${courts[i].link_URL}>View Court</a>
                         </div></div>`;
 
                         htmlContent += courtContent;
@@ -151,5 +169,11 @@ window.onload = function() {
     }
     if (window.location.href.indexOf('home.html') > -1) {
         TopRated();
+    }
+    if (window.onload.href.indexOf('wairoa.html') > -1) {
+        Wairoa();
+    }
+    if (window.onload.href.indexOf('central_hawkes_bay.html') > -1) {
+        CHB();
     }
   }
