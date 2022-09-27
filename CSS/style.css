@@ -8,8 +8,22 @@
 	padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
 
+#container {
+  min-height: 100%;
+  position: relative;
+}
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 101px;
+  background-color: gray;
+}
 
 header {
   height: fit-content;
@@ -166,6 +180,9 @@ header {
   font-family: 'Roboto', sans-serif;
   
 }
+.section_3 {
+  margin-bottom: 100px;
+}
 
 .section_3 h2 {
   text-align: center;
@@ -321,11 +338,6 @@ header {
   
 }
 
-footer {
-  min-height: 12.5vh;
-  
-  background-color: gray;
-}
 
 .footer_icons {
   text-align: center;
