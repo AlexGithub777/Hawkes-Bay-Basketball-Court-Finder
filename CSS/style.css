@@ -429,7 +429,49 @@ header {
   color: white;
   font-family: 'Roboto', sans-serif;
   padding: 10px;
+}
 
+.contact_boxes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   
   
+}
+
+
+.contact_form {
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  width: 400px;
+  height: 420px;
+  background-color: #fa8320;
+  
+} 
+
+.contact_form p {
+  padding: 15px;
+  font-size: 36px;
+}
+
+.social_media_box {
+  
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+
+  width: 400px;
+  height: 220px;
+  background-color: #fa8320;
+  
+}
+
+.name_forms {
+  background-color: transparent;
+  border: white 2px solid;
+  padding: 5px;
 }
