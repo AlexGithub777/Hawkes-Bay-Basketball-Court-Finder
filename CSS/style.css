@@ -117,19 +117,33 @@ header {
   }
 }
 
+@media screen and (min-width: 713px) {
+  .about_text p {
+    font-size: 30px;
+  }
+}
 
 .section_1 {
   height: fit-content;
    
 }
 
-.section_1 h1 {
+.home_title {
   text-align: center;
   color:  gray;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 20px;
   font-size: 26px;
+  font-family: 'Roboto', sans-serif;
+  }
+.pages_title {
+  text-align: center;
+  color:  gray;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 20px;
+  font-size: 30px;
   font-family: 'Roboto', sans-serif;
   }
 
@@ -365,3 +379,57 @@ header {
   color: white;
 }
 
+.about_text {
+  display: flex;
+  background-color: #fa8320;
+  height: fit-content;
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.about_text p {
+  padding: 20px;
+
+}
+
+.team_box {
+  display: flex;
+  background-color: #fa8320;
+  height: fit-content;
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Roboto', sans-serif;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.team_icon {
+  height: fit-content;
+  padding: 20px;
+}
+
+
+.team_text  {
+  background-color: gray;
+  text-align: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+
+  
+  
+}
