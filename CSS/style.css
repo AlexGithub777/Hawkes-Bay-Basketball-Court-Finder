@@ -87,7 +87,13 @@ header {
   background-color: #555;
   color: white;
 }
+
+@media screen and (min-width: 1052px) {
+  .vote_text {
+    font-size: 1.5rem;
+  }
   
+}
   
 @media screen and (max-width: 713px) {
   .nav a:not(.active) {
@@ -166,6 +172,8 @@ header {
     margin-left: 75px;
   }
 }
+
+
   
 
 .section_1 {
@@ -551,16 +559,46 @@ header {
 }
 
 .court_name {
+  margin-top: 20px;
   color: gray;
   font-size: 32px;
-  text-align: left;
-  margin-left: 10%;
+  text-align: left; 
+}
+
+@media screen and (max-width: 1049px) {
+  .court_name {
+    
+    margin-left: 10%;
+    
+  }
+  .court_place {
+    margin-left: 10%;
+  }
+}
+
+
+
+@media screen and (min-width: 1050px) {
+  .court_name {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
+  .court_place {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
 }
 
 .court_place {
-  margin-left: 10%;
-  text-align: left;
+  display: block;
   color: gray;
+  font-size: 1rem;
+  text-align: left;
+  
 }
 
 .court_page {
@@ -582,7 +620,7 @@ header {
 .court_info_name {
   text-align: left;
   margin-left: 25px;
-  margin-top: 25px;
+  margin-top: 10px;
   font-size: 1.5rem;
 }
 
@@ -607,12 +645,17 @@ header {
   width: 100%;
   max-width: 600px;
   margin-bottom: 25px;
-  
+}
+
+.court_map_text {
+  text-align: left;
+  margin-left: 25px;
+  margin-top: 25px;
+  font-size: 1.5rem;
 }
 
 .court_map_vote iframe {
   display: block;
-
   margin-right: auto;
   margin-left: auto;
   margin-top: 25px;
@@ -623,4 +666,5 @@ header {
   text-align: left;
   margin-left: 25px;
   margin-bottom: 25px;
+  
 }
