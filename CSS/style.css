@@ -112,6 +112,9 @@ header {
   .social_big_icons {
     display: none;
   }
+  .about_text {
+    font-size: 18px;
+  }
 }
   
 @media screen and (max-width: 713px) {
@@ -132,8 +135,8 @@ header {
 }
 
 @media screen and (min-width: 713px) {
-  .about_text p {
-    font-size: 30px;
+  .about_text {
+    font-size: 26px;
   }
   .contact_form p {
     font-size: 30px;
@@ -189,8 +192,10 @@ header {
   padding-top: 20px;
   font-size: 26px;
   }
+
 .pages_title {
-  text-align: center;
+  text-align: left;
+  margin-left: 10%;
   color:  gray;
   padding-left: 15px;
   padding-right: 15px;
@@ -265,7 +270,7 @@ header {
 }
 
 .Top3RatedCourts {
-  margin: 35px;
+  margin: 30px;
   display: block;
 	box-shadow: 0 0 1rem rgb(0 0 0 / 0.25);
 	background-color: #fa8320;
@@ -277,7 +282,7 @@ header {
 }
 
 .courtBox {
-  margin: 35px;
+  margin: 30px;
   display: none;
 	box-shadow: 0 0 1rem rgb(0 0 0 / 0.25);
 	background-color: #fa8320;
@@ -435,8 +440,6 @@ header {
   margin-right: auto;
   color: white;
   text-align: center;
-  font-size: 18px;
-  font-weight: bold;
   align-items: center;
 }
 
