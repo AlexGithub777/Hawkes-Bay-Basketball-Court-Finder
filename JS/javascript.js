@@ -1,32 +1,36 @@
 let courts = [{id: 0, name: "Marine Parade", place: "Napier", thumbs_up: 21, thumbs_down: 6, image_URL: "Images/marine_parade.jpeg", link_URL: "Courts/marine_parade.html"},
               {id: 1, name: "Fitzgerald Place Reserve", place: "Napier", thumbs_up: 18, thumbs_down: 6, image_URL: "Images/fitzgerald_place_reserve.jpg", link_URL: "Courts/fitzgerald_place_reserve.html"},
-              {id: 2, name: "Flaxmere Park", place: "Hastings", thumbs_up: 16, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg", link_URL: "Courts/flaxmere_park.html"}]
+              {id: 2, name: "Flaxmere Park", place: "Hastings", thumbs_up: 16, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg", link_URL: "Courts/flaxmere_park.html"},
+              {id: 3, name: "Wairoa Park", place: "Wairoa", thumbs_up: 16, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg", link_URL: "Courts/flaxmere_park.html"}]
             
+function display_courts() {
+    let htmlContent = "";
 
-let htmlContent = "";
+    for(let i = 0 ; i < courts.length ; i++) {
+        let courtContent = `<div class="courtBox">
+                                <img src=${courts[i].image_URL}>
+                                <br>
+                                    <div class="courtBody">
+                                        <h3>${courts[i].name}</h3>
+                                        <br>
+                                        <p>${courts[i].place}</p>
+                                        <br>
+                                        <p>👍 ${courts[i].thumbs_up} 👎 ${courts[i].thumbs_down}</p>
+                                        <br>
+                                    </div>
+                            <div class="button-wrapper"><a class="button-1" href=${courts[i].link_URL}>View Court</a>
+                            </div></div>`;
 
-for(let i = 0 ; i < courts.length ; i++) {
-    let courtContent = `<div class="courtBox">
-                            <img src=${courts[i].image_URL}>
-                            <br>
-                                <div class="courtBody">
-                                    <h3>${courts[i].name}</h3>
-                                    <br>
-                                    <p>${courts[i].place}</p>
-                                    <br>
-                                    <p>👍 ${courts[i].thumbs_up} 👎 ${courts[i].thumbs_down}</p>
-                                    <br>
-                                </div>
-                        <div class="button-wrapper"><a class="button-1" href=${courts[i].link_URL}>View Court</a>
-                        </div></div>`;
-
-                        htmlContent += courtContent;
+                            htmlContent += courtContent;
+    }
+    document.getElementById("courtsBox").innerHTML = htmlContent;
 }
 
-document.getElementById("courtsBox").innerHTML = htmlContent;
 
 
-
+function contact() {
+    alert('Your message has been sent.')
+}
 
 
 function openMenu() {
@@ -162,18 +166,23 @@ document.getElementById("Top3RatedCourts").innerHTML = htmlContent;
 
 window.onload = function() {
     if (window.location.href.indexOf('napier.html') > -1) {
+        display_courts();
         Napier();
     }
     if (window.location.href.indexOf('hastings.html') > -1) {
+        display_courts();
         Hastings();
     }
     if (window.location.href.indexOf('home.html') > -1) {
+        display_courts();
         TopRated();
     }
-    if (window.onload.href.indexOf('wairoa.html') > -1) {
+    if (window.location.href.indexOf('wairoa.html') > -1) {
+        display_courts();
         Wairoa();
     }
-    if (window.onload.href.indexOf('central_hawkes_bay.html') > -1) {
+    if (window.location.href.indexOf('central_hawkes_bay.html') > -1) {
+        display_courts();
         CHB();
     }
   }

@@ -16,6 +16,7 @@ html {
 body {
   height: 100%;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -51,7 +52,7 @@ header {
   padding-left: 20px;
   
   font-size: 11px;
-  font-family: 'Roboto', sans-serif;
+  
 }
 
 .nav {
@@ -71,7 +72,6 @@ header {
   padding: 8px 16px;
   text-decoration: none;
   font-size: 17px;
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
   
@@ -88,10 +88,6 @@ header {
   color: white;
 }
   
-.a:hover {
-  background-color: white;
-  color: black;
-}
   
 @media screen and (max-width: 713px) {
   .nav a:not(.active) {
@@ -101,9 +97,21 @@ header {
     float: right;
     display: block;
   }
+  .contact_form p {
+    font-size: 22px;
+  }
+  .social_media_box_title {
+    font-size: 22px;
+  }
+  .social_big_icons {
+    display: none;
+  }
 }
   
 @media screen and (max-width: 713px) {
+  .name_forms {
+    width: 80%;
+  }
   .nav.responsive {position: relative;}
   .nav.responsive .icon {
     position: absolute;
@@ -121,7 +129,44 @@ header {
   .about_text p {
     font-size: 30px;
   }
+  .contact_form p {
+    font-size: 30px;
+  }
+  .name_forms {
+    width: 168px;
+  }
+  .social_media_box_title {
+    font-size: 30px;
+  }
+  .social_small_icons {
+    display: none;
+  }
 }
+
+@media screen and (max-width: 1100px) {
+  .contact_form {
+    margin: 25px;
+  }
+  .social_media_box {
+    margin: 25px;
+  }
+}
+
+@media screen and (min-width: 1101px) {
+  .contact_form {
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    margin-right: 75px;
+  }
+  .social_media_box {
+    margin-top: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    margin-left: 75px;
+  }
+}
+  
 
 .section_1 {
   height: fit-content;
@@ -135,7 +180,6 @@ header {
   padding-right: 15px;
   padding-top: 20px;
   font-size: 26px;
-  font-family: 'Roboto', sans-serif;
   }
 .pages_title {
   text-align: center;
@@ -144,7 +188,6 @@ header {
   padding-right: 15px;
   padding-top: 20px;
   font-size: 30px;
-  font-family: 'Roboto', sans-serif;
   }
 
 .searchBox {
@@ -168,7 +211,6 @@ header {
   font-size: 14px;
   color: white;
   line-height: 1rem;
-  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   
 }
@@ -194,8 +236,6 @@ header {
   padding-left: 15px;
   padding-right: 15px;
   font-size: 18px;
-  font-family: 'Roboto', sans-serif;
-  
 }
 
 
@@ -206,8 +246,6 @@ header {
   padding-left: 15px;
   padding-right: 15px;
   font-size: 18px;
-  font-family: 'Roboto', sans-serif;
-  
 }
 
 .courtsBox {
@@ -284,14 +322,12 @@ header {
 
 .courtBox h3, p {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
   color: white;
 
 }
 
 .Top3RatedCourts h3, p {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
   color: white;
 
 }
@@ -305,7 +341,6 @@ header {
   margin-top: 1rem;
   display: none;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
   color: gray;
   transition: scale 350ms ease, opacity 350ms linear;
   animation: fadeIn 0.25s;
@@ -329,8 +364,6 @@ header {
 	text-align: center;
 	color: white;
 	font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-
 }
 
 .Top3RatedCourts .button-1 {
@@ -338,8 +371,6 @@ header {
 	text-align: center;
 	color: white;
 	font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-
 }
 
 .button-wrapper {
@@ -348,19 +379,25 @@ header {
   justify-content: center;
   align-items: center;
   display: flex;
-  
 }
 
 
 .footer_icons {
   text-align: center;
-  
+}
+
+.social_small_icons {
+  margin-bottom: 17px;
+  text-align: center;
+}
+
+.social_big_icons {
+  margin-bottom: 17px;
+  text-align: center;
 }
 
 .fa-facebook {
-  
   color: white;
-
 }
 
 .fa-youtube {
@@ -390,7 +427,6 @@ header {
   margin-right: auto;
   color: white;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: bold;
   align-items: center;
@@ -398,7 +434,6 @@ header {
 
 .about_text p {
   padding: 20px;
-
 }
 
 .team_box {
@@ -411,7 +446,6 @@ header {
   margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Roboto', sans-serif;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -422,12 +456,10 @@ header {
   padding: 20px;
 }
 
-
 .team_text  {
   background-color: gray;
   text-align: center;
   color: white;
-  font-family: 'Roboto', sans-serif;
   padding: 10px;
 }
 
@@ -436,42 +468,159 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  
-  
+
 }
 
-
 .contact_form {
-  margin-left: 60px;
-  margin-right: 60px;
-  margin-bottom: 40px;
-  margin-top: 40px;
-  width: 400px;
-  height: 420px;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: block;
+  width: 80%;
+  max-width: 450px;
+  height: fit-content;
   background-color: #fa8320;
-  
+  text-align: center;
 } 
 
 .contact_form p {
-  padding: 15px;
-  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.contact_form input {
+  margin: 10px;
+  color: white;
 }
 
 .social_media_box {
   
-  margin-left: 60px;
-  margin-right: 60px;
-  margin-bottom: 40px;
-  margin-top: 40px;
-
-  width: 400px;
-  height: 220px;
+  width: 80%;
+  max-width: 450px;
+  height: fit-content;
   background-color: #fa8320;
-  
 }
 
 .name_forms {
   background-color: transparent;
   border: white 2px solid;
   padding: 5px;
+}
+
+.email_form {
+  background-color: transparent;
+  border: white 2px solid;
+  padding: 5px;
+  width: 80%;
+}
+
+.message_form {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  resize: none;
+  background-color: transparent;
+  border: white 2px solid;
+  padding: 5px;
+  margin: 10px;
+  width: 80%;
+  height: 150px;
+}
+
+#contact_btn {
+  display: block;
+  margin-left: 10%;
+  color: white;
+  background-color: gray;
+  padding: 10px;
+  border: none;
+  
+}
+
+#contact_btn:hover {
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+}
+.social_media_box_title {
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+.social_media_box_p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.court_name {
+  color: gray;
+  font-size: 32px;
+  text-align: left;
+  margin-left: 10%;
+}
+
+.court_place {
+  margin-left: 10%;
+  text-align: left;
+  color: gray;
+}
+
+.court_page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.court_info {
+  background-color: gray;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 25px;
+}
+
+.court_info_name {
+  text-align: left;
+  margin-left: 25px;
+  margin-top: 25px;
+  font-size: 1.5rem;
+}
+
+.court_info_type {
+  text-align: left;
+  margin-left: 25px;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.court_info_address {
+  text-align: left;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.court_map_vote {
+  background-color: #fa8320;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 25px;
+  
+}
+
+.court_map_vote iframe {
+  display: block;
+
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.vote_text {
+  text-align: left;
+  margin-left: 25px;
+  margin-bottom: 25px;
 }
