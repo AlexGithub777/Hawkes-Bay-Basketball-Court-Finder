@@ -1,6 +1,7 @@
 let courts = [{id: 0, name: "Marine Parade", place: "Napier", thumbs_up: 21, thumbs_down: 6, image_URL: "Images/marine_parade.jpeg", link_URL: "Courts/marine_parade.html"},
               {id: 1, name: "Fitzgerald Place Reserve", place: "Napier", thumbs_up: 18, thumbs_down: 6, image_URL: "Images/fitzgerald_place_reserve.jpg", link_URL: "Courts/fitzgerald_place_reserve.html"},
-              {id: 2, name: "Flaxmere Park", place: "Hastings", thumbs_up: 16, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg", link_URL: "Courts/flaxmere_park.html"}]
+              {id: 2, name: "Flaxmere Park", place: "Hastings", thumbs_up: 16, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg", link_URL: "Courts/flaxmere_park.html"}, 
+              {id: 3, name: "St Joseph's School", place: "Central Hawkes Bay", thumbs_up: 22, thumbs_down: 5, image_URL: "Images/st_joseph's_school.png", link_URL: "Courts/st_joseph's_school.html"}]
             
 function display_courts() {
     let htmlContent = "";
@@ -196,11 +197,7 @@ function voting(court_like_num, court_dislike_num) {
             voteStatus.like = false;//has been clicked	
         }	
     }
-
-
     //Click Like button
-   
-    
     //Click Dislike button
     this.dislike = function () {
     //Check current status of "dislike" button (has been clicked or not)
@@ -229,23 +226,6 @@ function voting(court_like_num, court_dislike_num) {
         }	
     }	
 }
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-    
 
 
 window.onload = function() {
@@ -287,6 +267,13 @@ window.onload = function() {
         court_dislike_num = document.getElementById("dislikeNumber").innerHTML = courts[1].thumbs_down;
         voting(court_like_num, court_dislike_num);
     }
+
+    if (window.location.href.indexOf("st_joseph's_school.html") > -1) {
+        court_like_num = document.getElementById("likeNumber").innerHTML = courts[3].thumbs_up;
+        court_dislike_num = document.getElementById("dislikeNumber").innerHTML = courts[3   ].thumbs_down;
+        voting(court_like_num, court_dislike_num);
+    }
+
 
     
   }
