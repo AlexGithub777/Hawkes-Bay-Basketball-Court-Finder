@@ -16,7 +16,7 @@ function display_courts() {
                                         <br>
                                         <p>${courts[i].place}</p>
                                         <br>
-                                        <p>👍 ${courts[i].thumbs_up} 👎 ${courts[i].thumbs_down}</p>
+                                        <p>👍&nbsp;&nbsp;${courts[i].thumbs_up}&nbsp;&nbsp;&nbsp;&nbsp;👎&nbsp;&nbsp;${courts[i].thumbs_down}</p>
                                         <br>
                                     </div>
                             <div class="button-wrapper"><a class="button-1" href=${courts[i].link_URL}>View Court</a>

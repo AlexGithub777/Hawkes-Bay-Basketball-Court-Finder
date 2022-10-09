@@ -662,17 +662,24 @@ header {
   margin-right: auto;
   margin-left: auto;
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 .vote_text {
   text-align: left;
   margin-left: 25px;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.voteBox {
+  margin-top: 15px;
   margin-bottom: 15px;
 }
 
 #likeButton {
-  margin-left: 20px;
+  margin-left: 85px;
+  margin-bottom: 0px;
   height: 25px;
   width: 25px;
   border: none;
@@ -692,7 +699,7 @@ header {
 }
 
 #dislikeButton {
-  margin-left: 10px;
+  margin-left: 20px;
   height: 25px;
   width: 25px;
   border: none;
