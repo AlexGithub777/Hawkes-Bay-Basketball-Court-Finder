@@ -306,8 +306,8 @@ window.onload = function() {
     }
 
     if (window.location.href.indexOf("roberts_terrace_reserve.html") > -1) {
-        court_like_num = document.getElementById("likeNumber").innerHTML = courts[7].thumbs_up;
-        court_dislike_num = document.getElementById("dislikeNumber").innerHTML = courts[7].thumbs_down;
+        court_like_num = document.getElementById("likeNumber").innerHTML = courts[10].thumbs_up;
+        court_dislike_num = document.getElementById("dislikeNumber").innerHTML = courts[10].thumbs_down;
         voting(court_like_num, court_dislike_num);
     }
     
