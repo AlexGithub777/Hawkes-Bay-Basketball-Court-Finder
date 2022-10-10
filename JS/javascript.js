@@ -4,7 +4,8 @@ let courts = [{name: "Marine Parade", place: "Napier", thumbs_up: 21, thumbs_dow
               {name: "St Joseph's School", place: "Central Hawkes Bay", thumbs_up: 22, thumbs_down: 5, image_URL: "Images/st_joseph's_school.png", link_URL: "Courts/st_joseph's_school.html"},
               {name: "Wairoa Community Centre", place: "Wairoa", thumbs_up: 9, thumbs_down: 1, image_URL: "Images/wairoa_community_centre.jpg", link_URL: "Courts/wairoa_community_centre.html"},
               {name: "Kirkpatrick Park", place: "Hastings", thumbs_up: 14, thumbs_down: 3, image_URL: "Images/kirkpatrick_park.jpg", link_URL: "Courts/kirkpatrick_park.html"},
-              {name: "Mitre 10 Park", place: "Hastings", thumbs_up: 28, thumbs_down: 7, image_URL: "Images/mitre_10_park.jpg", link_URL: "Courts/mitre_10_park.html"}]
+              {name: "Mitre 10 Park", place: "Hastings", thumbs_up: 28, thumbs_down: 7, image_URL: "Images/mitre_10_park.jpg", link_URL: "Courts/mitre_10_park.html"},
+              {name: "Russell Park", place: "Central Hawkes Bay", thumbs_up: 5, thumbs_down: 5, image_URL: "Images/russell_park.png.jpg", link_URL: "Courts/russell_park.html"}]
             
 function display_courts() {
     courts.sort((a, b) => b.thumbs_up - a.thumbs_up);
@@ -290,6 +291,12 @@ window.onload = function() {
     }
 
     if (window.location.href.indexOf("mitre_10_park.html") > -1) {
+        court_like_num = document.getElementById("likeNumber").innerHTML = courts[6].thumbs_up;
+        court_dislike_num = document.getElementById("dislikeNumber").innerHTML = courts[6].thumbs_down;
+        voting(court_like_num, court_dislike_num);
+    }
+
+    if (window.location.href.indexOf("russell_park.html") > -1) {
         court_like_num = document.getElementById("likeNumber").innerHTML = courts[6].thumbs_up;
         court_dislike_num = document.getElementById("dislikeNumber").innerHTML = courts[6].thumbs_down;
         voting(court_like_num, court_dislike_num);
