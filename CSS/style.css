@@ -152,7 +152,7 @@ header {
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1116px) {
   .contact_form {
     margin: 25px;
   }
@@ -161,7 +161,7 @@ header {
   }
 }
 
-@media screen and (min-width: 1101px) {
+@media screen and (min-width: 1117px) {
   .contact_form {
     margin-top: 25px;
     margin-left: 25px;
