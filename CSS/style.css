@@ -684,7 +684,7 @@ header {
 }
 
 #likeButton {
-  margin-left: 25px;
+  margin-left: 15px;
   margin-bottom: 0px;
   height: 25px;
   width: 25px;
@@ -693,19 +693,19 @@ header {
 }
 
 #likeNumber {
-  margin-left: 15px;;
+  margin-left: 10px;;
   margin-top: 3px;
   
   
 }
 
 #dislikeNumber {
-  margin-left: 15px;
+  margin-left: 10px;
   margin-top: 3px;
 }
 
 #dislikeButton {
-  margin-left: 15px;
+  margin-left: 10px;
   height: 25px;
   width: 25px;
   border: none;
