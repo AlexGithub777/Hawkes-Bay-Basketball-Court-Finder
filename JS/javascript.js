@@ -311,5 +311,10 @@ window.onload = function() {
         voting(court_like_num, court_dislike_num);
     }
     
+    if (window.location.href.indexOf("william_nelson_park.html") > -1) {
+        court_like_num = document.getElementById("likeNumber").innerHTML = courts[10].thumbs_up;
+        court_dislike_num = document.getElementById("dislikeNumber").innerHTML = courts[10].thumbs_down;
+        voting(court_like_num, court_dislike_num);
+    }
     
   }
