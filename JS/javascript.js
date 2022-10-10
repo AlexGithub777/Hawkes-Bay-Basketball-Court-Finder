@@ -18,16 +18,16 @@ function display_courts() {
         let courtContent = `<div class="courtBox">
                                 <img src=${courts[i].image_URL}>
                                 <br>
-                                    <div class="courtBody">
-                                        <h3>${courts[i].name}</h3>
-                                        <br>
-                                        <p>${courts[i].place}</p>
-                                        <br>
-                                        <p>👍&nbsp;&nbsp;${courts[i].thumbs_up}&nbsp;&nbsp;&nbsp;&nbsp;👎&nbsp;&nbsp;${courts[i].thumbs_down}</p>
-                                        <br>
-                                    </div>
-                            <div class="button-wrapper"><a class="button-1" href=${courts[i].link_URL}>View Court</a>
-                            </div></div>`;
+                                <div class="courtBody">
+                                    <h3>${courts[i].name}</h3>
+                                    <br>
+                                    <p>${courts[i].place}</p>
+                                    <br>
+                                </div>
+                                    <p>👍&nbsp;&nbsp;${courts[i].thumbs_up}&nbsp;&nbsp;&nbsp;&nbsp;👎&nbsp;&nbsp;${courts[i].thumbs_down}</p>
+                                    <br>
+                                <div class="button-wrapper"><a class="button-1" href=${courts[i].link_URL}>View Court</a></div>
+                            </div>`;
 
                             htmlContent += courtContent;
     }
@@ -158,11 +158,11 @@ var TopRated= () => {
                                     <br>
                                     <p>${courts[i].place}</p>
                                     <br>
+                                </div>
                                     <p>👍&nbsp;&nbsp;${courts[i].thumbs_up}&nbsp;&nbsp;&nbsp;&nbsp;👎&nbsp;&nbsp;${courts[i].thumbs_down}</p>
                                     <br>
-                                </div>
-                        <div class="button-wrapper"><a class="button-1" href=${courts[i].link_URL}>View Court</a>
-                        </div></div>`;
+                                <div class="button-wrapper"><a class="button-1" href=${courts[i].link_URL}>View Court</a></div>
+                            </div>`;
 
                         htmlContent += courtContent;
 }
