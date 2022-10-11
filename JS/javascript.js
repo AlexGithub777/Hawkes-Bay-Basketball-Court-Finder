@@ -1,3 +1,4 @@
+// Create courts array 
 let courts = [{name: "Marine Parade", place: "Napier", thumbs_up: 21, thumbs_down: 6, image_URL: "Images/marine_parade.jpeg", link_URL: "Courts/marine_parade.html"},
               {name: "Fitzgerald Place Reserve", place: "Napier", thumbs_up: 18, thumbs_down: 6, image_URL: "Images/fitzgerald_place_reserve.jpg", link_URL: "Courts/fitzgerald_place_reserve.html"},
               {name: "Flaxmere Park", place: "Hastings", thumbs_up: 16, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg", link_URL: "Courts/flaxmere_park.html"}, 
@@ -10,11 +11,14 @@ let courts = [{name: "Marine Parade", place: "Napier", thumbs_up: 21, thumbs_dow
               {name: "William Nelson Park", place: "Hastings", thumbs_up: 17, thumbs_down: 0, image_URL: "Images/william_nelson_park.png", link_URL: "Courts/william_nelson_park.html"},
               {name: "Roberts Terrace Park", place: "Napier", thumbs_up: 11, thumbs_down: 4, image_URL: "Images/roberts_terrace_reserve.jpg", link_URL: "Courts/roberts_terrace_reserve.html"},
               {name: "Len Harlen Park", place: "Hastings", thumbs_up: 7, thumbs_down: 0, image_URL: "Images/len_harlen_park.png", link_URL: "Courts/len_harlen_park.html"}]
-            
-function displayCourts() {
-    courts.sort((a, b) => b.thumbs_up - a.thumbs_up);
-    let htmlContent = "";
 
+// Display courts function 
+function displayCourts() {
+    // sorts courts by largest number of thumbs up 
+    courts.sort((a, b) => b.thumbs_up - a.thumbs_up);
+    // Initalize variable 
+    let htmlContent = "";
+    // Loop through each court in courts array and add html content with parsed values to courtContent
     for(let i = 0 ; i < courts.length ; i++) {
         let courtContent = `<!--Court box-->
                             <div class="court_box">
@@ -36,126 +40,20 @@ function displayCourts() {
                                 <!--Court button-->
                                 <div class="button_wrapper"><a class="button_1" href=${courts[i].link_URL}>View Court</a></div>
                             </div>`;
-
+                            // Add courtContent too htmlContent 
                             htmlContent += courtContent;
     }
+    // Apply htmlContent to courts_box innerHTML
     document.getElementById("courts_box").innerHTML = htmlContent;
 }
 
-
-
-
-function contact() {
-    alert('Your message has been sent.')
-}
-
-
-function openMenu() {
-  var x = document.getElementById("top_nav");
-  if (x.className === "nav") {
-    x.className += " responsive";
-  } else {
-    x.className = "nav";
-  }
-}
-
-var searchFilter = () => {
-    const input = document.querySelector(".search");
-    const courts = document.getElementsByClassName("court_box");
-    let searchResult = 0
-    let filter = input.value
-    if (filter.length > 0) {
-        document.getElementById("search_text").style.display = "block"; 
-    } else {
-        document.getElementById("search_text").style.display = "none";
-    }
-    
-    for (let i = 0; i < courts.length; i++) {
-        let title = courts[i].querySelector(".court_body")
-    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
-        courts[i].style.display = "block";
-        
-        searchResult ++
-    } else {
-        courts[i].style.display = "none";   
-    }
-    }
-
-    if (searchResult == 0 && filter.length > 0) {
-        document.getElementById("no_results").style.display = "block";
-        document.getElementById("search_text").style.display = "none";
-
-    } else {
-        document.getElementById("no_results").style.display = "none";
-    }
-    
-    
-}
-
-
-
-
-var napier = () => {
-    const courts = document.getElementsByClassName("court_box");
-    let filter = "Napier"
-    for (let i = 0; i < courts.length; i++) {
-        let title = courts[i].querySelector(".court_body")
-    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
-        courts[i].style.display = "block"
-
-    } else {
-        courts[i].style.display = "none"
-    }
-    }
-}
-
-var hastings = () => {
-    
-    const courts = document.getElementsByClassName("court_box");
-    let filter = "Hastings"
-    for (let i = 0; i < courts.length; i++) {
-        let title = courts[i].querySelector(".court_body")
-    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
-        courts[i].style.display = "block"
-
-    } else {
-        courts[i].style.display = "none"
-    }
-    }
-}
-
-var wairoa = () => {
-    const courts = document.getElementsByClassName("court_box");
-    let filter = "Wairoa"
-    for (let i = 0; i < courts.length; i++) {
-        let title = courts[i].querySelector(".court_body")
-    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
-        courts[i].style.display = "block"
-
-    } else {
-        courts[i].style.display = "none"
-    }
-    }
-}
-
-var chb = () => {
-    const courts = document.getElementsByClassName("court_box");
-    let filter = "Central Hawkes Bay"
-    for (let i = 0; i < courts.length; i++) {
-        let title = courts[i].querySelector(".court_body")
-    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
-        courts[i].style.display = "block"
-
-    } else {
-        courts[i].style.display = "none"
-    }
-    }
-}
-
-
-var topRated= () => {
+// top rated courts function
+function topRated() {
+    // Takes top 3 rated courts from courts array
     let Top3RatedCourts = courts.slice(0, 3);
+    // Initalize variable 
     let htmlContent = "";
+    // Loop through each court in Top3RatedCourts array and add html content with parsed values to courtContent
     for(let i = 0 ; i < Top3RatedCourts.length ; i++) {
         let courtContent = `<!--Court box-->
                             <div class="top_3_courts">
@@ -177,15 +75,129 @@ var topRated= () => {
                                 <!--Court button-->
                                 <div class="button_wrapper"><a class="button_1" href=${courts[i].link_URL}>View Court</a></div>
                             </div>`;
-
+                        // Add courtContent too htmlContent 
                         htmlContent += courtContent;
     }
+    // Apply htmlContent to courts_box innerHTML
     document.getElementById("top_3_courts").innerHTML = htmlContent;
 }
 
+// Contact function
+function contact() {
+    alert('Your message has been sent.')
+}
 
+// open menu function
+function openMenu() {
+  var x = document.getElementById("top_nav");
+  if (x.className === "nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "nav";
+  }
+}
+
+// Search filter function
+function searchFilter() {
+    // Initialize variables
+    const input = document.querySelector(".search");
+    const courts = document.getElementsByClassName("court_box");
+    let searchResult = 0
+    let filter = input.value
+    // If input length is greater then 0 display search text, else hide search text
+    if (filter.length > 0) {
+        document.getElementById("search_text").style.display = "block"; 
+    } else {
+        document.getElementById("search_text").style.display = "none";
+    }
+    
+    // Loop through courts array, and display courts that match the search filter 
+    for (let i = 0; i < courts.length; i++) {
+        let title = courts[i].querySelector(".court_body")
+    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
+        courts[i].style.display = "block";
+        searchResult ++
+    } else {
+        courts[i].style.display = "none";   
+    }
+    }
+
+    // If no results are found and filter length is greater than 0, display no results text and hide search text, else hide no results text
+    if (searchResult == 0 && filter.length > 0) {
+        document.getElementById("no_results").style.display = "block";
+        document.getElementById("search_text").style.display = "none";
+
+    } else {
+        document.getElementById("no_results").style.display = "none";
+    }
+}
+
+// Napier function - displays napier courts
+function napier() {
+    const courts = document.getElementsByClassName("court_box");
+    let filter = "Napier"
+    for (let i = 0; i < courts.length; i++) {
+        let title = courts[i].querySelector(".court_body")
+    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
+        courts[i].style.display = "block"
+
+    } else {
+        courts[i].style.display = "none"
+    }
+    }
+}
+
+// Hastings function - displays hastings courts
+function hastings() {
+    
+    const courts = document.getElementsByClassName("court_box");
+    let filter = "Hastings"
+    for (let i = 0; i < courts.length; i++) {
+        let title = courts[i].querySelector(".court_body")
+    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
+        courts[i].style.display = "block"
+
+    } else {
+        courts[i].style.display = "none"
+    }
+    }
+}
+
+// Wairoa function - displays wairoa courts
+function wairoa() {
+    const courts = document.getElementsByClassName("court_box");
+    let filter = "Wairoa"
+    for (let i = 0; i < courts.length; i++) {
+        let title = courts[i].querySelector(".court_body")
+    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
+        courts[i].style.display = "block"
+
+    } else {
+        courts[i].style.display = "none"
+    }
+    }
+}
+
+// Chb function - displays chb courts
+function chb() {
+    const courts = document.getElementsByClassName("court_box");
+    let filter = "Central Hawkes Bay"
+    for (let i = 0; i < courts.length; i++) {
+        let title = courts[i].querySelector(".court_body")
+    if (filter.toLowerCase() && title.textContent.toLocaleLowerCase().indexOf(filter.toLowerCase()) > -1) {
+        courts[i].style.display = "block"
+
+    } else {
+        courts[i].style.display = "none"
+    }
+    }
+}
+
+// Voting function taskes court, takes court_like_num and court_dislike_num as parameters
 function voting(court_like_num, court_dislike_num) {
 
+
+    // Initialize variables 
     let currentVotes = {like: court_like_num, dislike: court_dislike_num}
     
     //Variables to track the clicking status
@@ -247,7 +259,7 @@ function voting(court_like_num, court_dislike_num) {
     }	
 }
 
-
+// Load functions when for webpages
 window.onload = function() {
     if (window.location.href.indexOf('napier.html') > -1) {
         displayCourts();
