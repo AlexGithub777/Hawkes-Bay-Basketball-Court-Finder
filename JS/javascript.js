@@ -44,7 +44,7 @@ function contact() {
 
 
 function openMenu() {
-  var x = document.getElementById("topNav");
+  var x = document.getElementById("top_nav");
   if (x.className === "nav") {
     x.className += " responsive";
   } else {
