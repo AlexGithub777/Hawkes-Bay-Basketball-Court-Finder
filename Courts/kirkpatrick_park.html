@@ -4,29 +4,37 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Clears cache improves github pages update time-->
         <meta http-equiv='cache-control' content='no-cache'> 
         <meta http-equiv='expires' content='0'> 
         <meta http-equiv='pragma' content='no-cache'>
+        <!--Webpage title-->
         <title>Kirkpatrick Park | Public Basketball Courts in Hawkes Bay</title>
-        <link rel="stylesheet" type="text/css" href="https://alexgithub777.github.io/Website/CSS/style.css">  <!--add back once complete (without quotes) 'https://alexgithub777.github.io/Website' -->
+        <!--Links external stylesheet-->
+        <link rel="stylesheet" type="text/css" href="https://alexgithub777.github.io/Website/CSS/style.css">
+        <!--Links favicon-->
         <link rel="icon" type="image/x-icon" href="https://alexgithub777.github.io/Website/Images/favicon.ico">
+        <!--Links google fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <!--Links font awesome fonts-->
         <script src="https://kit.fontawesome.com/bf5be420c0.js" crossorigin="anonymous"></script>
     </head>
-
-    <!--Body Section-->
+    <!--Body section-->
     <body>
-        <!--Header Area-->
+        <!--Header section-->
         <header>
             <div class="header_image">
+                <!--Header image-->
                 <img src="https://alexgithub777.github.io/Website/Images/basketball_icon.png" alt="Basketball icon">
             </div>
             <div class="header_text">
+                <!--Header text-->
                 <h1>Public Basketball Courts in Hawkes Bay</h1>
             </div>       
         </header>
+        <!--Navigation section-->
         <div class="nav" id="top_nav">
             <a href="https://alexgithub777.github.io/Website/home.html">Home</a>
             <a href="https://alexgithub777.github.io/Website/napier.html">Napier</a>
@@ -36,37 +44,52 @@
             <a href="https://alexgithub777.github.io/Website/about.html">About</a>
             <a href="https://alexgithub777.github.io/Website/contact.html">Contact</a>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="openMenu()">&#9776;</a>
-        </div>  
+        </div> 
+        <!--Main section-->   
         <main>
-            
+            <!--Court name-->
             <h2 class="court_name"><b>Kirkpatrick Park</b></h2>
-            
+            <!--Court place-->
             <p class="court_place">Hastings</p>
+            <!--Court content-->
             <div class="court_page">
                 <div class="court_info">
+                    <!--Court image-->
                     <img src="https://alexgithub777.github.io/Website/Images/kirkpatrick_park.jpg" alt="court image" width="100%">
+                    <!--Court name-->
                     <p class='court_info_name'><b>Kirkpatrick Park</b></p>
+                    <!--Court type-->
                     <p class='court_info_type'>Outdoor Full Court</p>
+                    <!--Court address-->
                     <p class="court_info_address">700 Orchard Road, Camberley, Hastings 4120</p>
                 </div>
+                <!--Court map and votes-->
                 <div class='court_map_vote'>
                     <p class="court_map_text"><b>Find on a map</b></p>
+                    <!--Map of court-->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1202.0776436423093!2d176.81727983330364!3d-39.62485207638857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d69c9f40ade5803%3A0x70b32383170a9ef1!2sKirkpatrick%20Park!5e0!3m2!1sen!2snz!4v1665373162081!5m2!1sen!2snz" width="90%" height="310`" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!--Voting box-->
                     <div class="vote_box">
                         <p class="vote_text">Leave a vote</p>
+                        <!--Like button-->
                         <button id="like_button" onclick="like()">&#128077;</button>
+                        <!--Like number-->
                         <p id="like_number"></p>
+                        <!--Dislike button-->
                         <button id="dislike_button" onclick="dislike()">&#128078;</button>
+                        <!--Dislike number-->
                         <p id="dislike_number"></p>
                     </div>
                 </div>
             </div>
         </main>
+        <!--Footer section-->
         <footer>
             <div class="footer">
                 <br>
                 <p>Our Social Media</p>
                 <br>
+                <!--Social media icons-->
                 <div class="footer_icons">
                     <a href="https://facebook.com//"><i class="fa-brands fa-facebook fa-2x"></i></a>
                     <span style=cursor:default;>&nbsp;&nbsp;&nbsp;</span>
@@ -81,6 +104,6 @@
             </div>
         </footer>
         <!--Imports external javascript file-->
-        <script src="https://alexgithub777.github.io/Website/JS/javascript.js"></script> <!-- add back when complete (without quotes) "https://alexgithub777.github.io/Website"-->
+        <script src="https://alexgithub777.github.io/Website/JS/javascript.js"></script>
     </body>
 </html>

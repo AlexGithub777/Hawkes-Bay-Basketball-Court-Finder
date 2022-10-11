@@ -4,30 +4,37 @@
     <head>
         <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Clears cache improves github pages update time-->
         <meta http-equiv='cache-control' content='no-cache'> 
         <meta http-equiv='expires' content='0'> 
         <meta http-equiv='pragma' content='no-cache'>
+        <!--Webpage title-->
 	    <title>Contact Us | Public Basketball Courts in Hawkes Bay</title>
+        <!--Links external stylesheet-->
 	    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <!--Links favicon-->
         <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+        <!--Links google fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <!--Links font awesome fonts-->
         <script src="https://kit.fontawesome.com/bf5be420c0.js" crossorigin="anonymous"></script> 
     </head>
-
-    <!--Body Section-->
+    <!--Body section-->
     <body>
-        <!--Header Area-->
+        <!--Header section-->
         <header>
             <div class="header_image">
+                <!--Header image-->
                 <img src="Images/basketball_icon.png" alt="Basketball icon">
             </div>
             <div class="header_text">
+                <!--Header text-->
                 <h1>Public Basketball Courts in Hawkes Bay</h1>
             </div>       
         </header>
-        <!--Nav Bar-->
+        <!--Navigation section-->
         <div class="nav" id="top_nav">
             <a href="home.html">Home</a>
             <a href="napier.html">Napier</a>
@@ -38,26 +45,40 @@
             <a href="contact.html" class="active">Contact</a>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="openMenu()">&#9776;</a>
         </div>
-        <!--Main area-->
+        <!--Main section-->
         <main>
+            <!--Section 1-->
             <div class="section_1">
                 <br>
+                <!--Title text-->
                 <h1 class='pages_title'>Contact Us</h1>
+                <!--Contact boxes-->
                 <div class="contact_boxes">
+                    <!--Contact form-->
                     <div class="contact_form">
+                        <!--Contact form title-->
                         <p><b>Send us a message</b></p>
+                        <!--First name form-->
                         <input type="text" placeholder="First Name" aria-label="Enter first name" class="name_forms">
+                        <!--Last name form-->
                         <input type="text" placeholder="Last Name" aria-label="Enter last name" class="name_forms">
+                        <!--Email form-->
                         <input type="text" placeholder="Email Address" aria-label="Enter email address" class="email_form">
+                        <!--Text area-->
                         <textarea class="message_form" placeholder="Message"></textarea>
                         <br>
+                        <!--Submit button-->
                         <button type='submit' id="contact_btn" onclick="contact()">Send</button>
                     </div>
+                    <!--Scoial media box-->
                     <div class="social_media_box">
+                        <!--Social media box title-->
                         <p class='social_media_box_title'><b>Social Media</b></p>
+                        <!--Social media box paragraph-->
                         <p class="social_media_box_p">Check out our social media to contact us and keep up to date with what we're doing.</p>
                         <br>
                         <br>
+                        <!--Small social media icons-->
                         <div class="social_small_icons">
                             <a href="https://facebook.com//"><i class="fa-brands fa-facebook fa-xl"></i></a>
                             <span style=cursor:default;>&nbsp;&nbsp;&nbsp;</span>
@@ -69,6 +90,7 @@
                             <span style=cursor:default;>&nbsp;&nbsp;&nbsp;</span>
                             <a href="https://twitter.com/"><i class="fa-brands fa-twitter fa-xl"></i></a>
                         </div>
+                        <!--Big social media icons-->
                         <div class="social_big_icons">
                             <a href="https://facebook.com//"><i class="fa-brands fa-facebook fa-2x"></i></a>
                             <span style=cursor:default;>&nbsp;&nbsp;&nbsp;</span>
@@ -84,11 +106,13 @@
                 </div>   
             </div>
         </main>
+        <!--Footer section-->
         <footer>
             <div class="footer">
                 <br>
                 <p>Our Social Media</p>
                 <br>
+                <!--Social media icons-->
                 <div class="footer_icons">
                     <a href="https://facebook.com//"><i class="fa-brands fa-facebook fa-2x"></i></a>
                     <span style=cursor:default;>&nbsp;&nbsp;&nbsp;</span>
@@ -102,6 +126,7 @@
                 </div>
             </div>
         </footer>
+        <!--Imports external javascript file-->
         <script src="JS/javascript.js"></script>
     </body>
 </html>

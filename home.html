@@ -4,30 +4,37 @@
     <head>
         <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Clears cache improves github pages update time-->
         <meta http-equiv='cache-control' content='no-cache'> 
         <meta http-equiv='expires' content='0'> 
         <meta http-equiv='pragma' content='no-cache'>
-	    <title>Home | Public Basketball Courts in Hawkes Bay</title>
+	    <!--Webpage title-->
+        <title>Home | Public Basketball Courts in Hawkes Bay</title>
+        <!--Links external stylesheet-->
         <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <!--Links favicon-->
         <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+        <!--Links google fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <!--Links font awesome fonts-->
         <script src="https://kit.fontawesome.com/bf5be420c0.js" crossorigin="anonymous"></script>
     </head>
-
-    <!--Body Section-->
-    
+    <!--Body section-->
     <body>
-    <!--Header Area-->
+        <!--Header section-->
         <header>
             <div class="header_image">
+                <!--Header image-->
                 <img src="Images/basketball_icon.png" alt="Basketball icon">
             </div>
             <div class="header_text">
+                <!--Header text-->
                 <h1>Public Basketball Courts in Hawkes Bay</h1>
             </div>       
         </header>
+        <!--Navigation section-->
         <div class="nav" id="top_nav">
             <a href="home.html" class="active">Home</a>
             <a href="napier.html">Napier</a>
@@ -38,33 +45,43 @@
             <a href="contact.html">Contact</a>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="openMenu()">&#9776;</a>
         </div>
-    
+        <!--Main section-->
         <main>
+            <!--Section 1-->
             <div class="section_1">
+                <!--Title text-->
                 <h1 class="home_title">Find Public Basketball Courts in Hawkes Bay</h1>
                 <br>
+                <!--Search box-->
                 <div class="search_box">
                     <input type="text" placeholder="Enter a court or place name" aria-label="Search courts" class="search" onkeyup="searchFilter()">
                 </div>
             </div>
+            <!--Section 2-->
             <div class="section_2">
+                <!--Search text-->
                 <h2 id="search_text">Search Results</h2>
+                <!--No rseults text-->
                 <p id="no_results">No results found</p>
-                <div id="courts_box" class="courts_box">
-                </div>
+                <!--Courts box-->
+                <div id="courts_box" class="courts_box"></div>
             </div>
+            <!--Section 3-->
             <div class="section_3">
+                <!--Top rated courts text-->
                 <h2>Top Rated Courts</h2>
-                <div id="top_3_courts" class="courts_box">
-                </div>
+                <!--Top rated courts-->
+                <div id="top_3_courts" class="courts_box"></div>
             </div>
             <br>
         </main>
+        <!--Footer section-->
         <footer>
             <div class="footer">
                 <br>
                 <p>Our Social Media</p>
                 <br>
+                <!--Social media icons-->
                 <div class="footer_icons">
                     <a href="https://facebook.com//"><i class="fa-brands fa-facebook fa-2x"></i></a>
                     <span style=cursor:default;>&nbsp;&nbsp;&nbsp;</span>
@@ -78,6 +95,7 @@
                 </div>
             </div>
         </footer>
+        <!--Imports external javascript file-->
         <script src="JS/javascript.js"></script>
     </body>
 </html>
