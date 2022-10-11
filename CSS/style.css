@@ -2,15 +2,33 @@
 /* Importing google font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
-/* Media queries */
-@media screen and (min-width: 1052px) {
-  .vote_text {
-    font-size: 1.25rem;
-  }
-  
+/* Keyframes */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
-  
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Media queries */  
 @media screen and (max-width: 713px) {
   .nav a:not(.active) {
     display: none;
@@ -65,6 +83,38 @@
   }
   .social_small_icons {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1049px) {
+  .court_name {
+    
+    margin-left: 10%;
+    
+  }
+  .court_place {
+    margin-left: 10%;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .court_name {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
+  .court_place {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1052px) {
+  .vote_text {
+    font-size: 1.25rem;
   }
 }
 
@@ -185,6 +235,12 @@ header {
   color: white;
 }
 
+/* Applies attributes to h3 and p elements */ 
+h3, p {
+  text-align: center;
+  color: white;
+}
+
 /* Applies attributes to section_1 class */
 .section_1 {
   height: fit-content;
@@ -210,9 +266,9 @@ header {
   font-size: 30px;
   }
 
-.searchBox {
+/* Applies attributes to search box container */
+.search_box {
   display: flex;
-  
   background-color: gray;
   width: 80vw;
   max-width: 700px;
@@ -220,10 +276,10 @@ header {
   margin-right: auto;
   padding: 0.75rem 20px;
   border-radius: 60px;
-  
 }
 
-.form-control {
+/* Applies attributes to search box */
+.search {
   background: transparent;
   flex: 1;
   border: 0;
@@ -232,23 +288,20 @@ header {
   color: white;
   line-height: 1rem;
   font-size: 1rem;
-  
 }
 
-
-
-
-
+/* Applies attributes to search box placeholder text */
 ::placeholder {
   color: white;
   font-size: 14px;
 }
-.section_2 {
-  height: fit-content;
-  
-}
-  
 
+/* Applies attributes to section_2 class */
+.section_2 {
+  height: fit-content;  
+}
+
+/* Applies attributes to h2 elements in section_2 class  */
 .section_2 h2 {
   text-align: center;
   color:  gray;
@@ -258,7 +311,7 @@ header {
   font-size: 18px;
 }
 
-
+/* Applies attributes to h2 elements in section_3 class  */
 .section_3 h2 {
   text-align: center;
   color:  gray;
@@ -268,15 +321,16 @@ header {
   font-size: 18px;
 }
 
-.courtsBox {
-	/*Use display: flex to change the layout*/
+/* Applies attributes to courts_box class */
+.courts_box {
 	display: flex;
 	flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;   
 }
 
-.Top3RatedCourts {
+/* Applies attributes to top_3_courts class */
+.top_3_courts {
   margin-left: 40px;
   margin-right: 40px;
   margin-bottom: 30px;
@@ -287,11 +341,10 @@ header {
 	width: 270px;
   height: 349px;
   transition: scale 350ms ease, opacity 350ms linear;
-	/*Create court box equal size*/
-	
 }
 
-.courtBox {
+/* Applies attributes to court_box class */
+.court_box {
   margin-left: 40px;
   margin-right: 40px;
   margin-bottom: 30px;
@@ -302,67 +355,30 @@ header {
 	width: 270px;
   height: 349px;
   transition: scale 350ms ease, opacity 350ms linear;
-  
-	/*Create box equal size*/
-	
 }
 
-
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+/* Applies attributes to court_body class */
+.court_body {
+  margin-top: 10px;
 }
 
-@-moz-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@-webkit-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@-o-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@-ms-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-.courtsBox:has(.courtBox:hover) .courtBox:not(:hover) {
+/* Applies fade affect to court boxes */
+.courts_box:has(.court_box:hover) .court_box:not(:hover) {
   scale: 0.9;
   opacity: 0.7;
 }
 
-.courtsBox:has(.Top3RatedCourts:hover) .Top3RatedCourts:not(:hover) {
+.courts_box:has(.top_3_courts:hover) .top_3_courts:not(:hover) {
   scale: 0.9;
   opacity: 0.7;
 }
 
-
-
-.courtBox h3, p {
-  text-align: center;
-  color: white;
-
-}
-
-.Top3RatedCourts h3, p {
-  text-align: center;
-  color: white;
-
-}
-
-#searchText {
+/* Applies attributes to search_text class */
+#search_text {
   display: none;
-  
 }
 
+/* Applies attributes to no results text */
 #no_results {
   margin-top: 1rem;
   display: none;
@@ -377,29 +393,27 @@ header {
   
 }
 
-.courtsBox img {
-  
+/* Applies attributes to court images */
+.court_box img {
   width: 270px;
   height: 180.36px;
-
 }
 
+.top_3_courts img {
+  width: 270px;
+  height: 180.36px;
+}
 
-.courtBox .button-1 {
+/* Applies attributes to court button */
+.button_1 {
   display: block;
 	text-align: center;
 	color: white;
 	font-weight: bold;
 }
 
-.Top3RatedCourts .button-1 {
-  display: block;
-	text-align: center;
-	color: white;
-	font-weight: bold;
-}
-
-.button-wrapper {
+/* Applies attributes to court button-wrapper */
+.button_wrapper {
   height: 3rem;
   background-color: gray;
   justify-content: center;
@@ -407,41 +421,49 @@ header {
   display: flex;
 }
 
-
+/* Applies attributes to footer icons class */
 .footer_icons {
   text-align: center;
 }
 
+/* Applies attributes to small social icons class */
 .social_small_icons {
   margin-bottom: 17px;
   text-align: center;
 }
 
+/* Applies attributes to social big icons class */
 .social_big_icons {
   margin-bottom: 17px;
   text-align: center;
 }
 
+/* Applies attributes to font awesome facebook icon */
 .fa-facebook {
   color: white;
 }
 
+/* Applies attributes to font awesome youtube icon */
 .fa-youtube {
   color: white;
 }
 
+/* Applies attributes to font awesome twitter icon */
 .fa-twitter {
   color: white;
 }
 
+/* Applies attributes to font awesome instagram icon */
 .fa-instagram {
   color: white;
 }
 
+/* Applies attributes to font awesome snapchat icon */
 .fa-snapchat {
   color: white;
 }
 
+/* Applies attributes to about_text class */
 .about_text {
   display: flex;
   background-color: #fa8320;
@@ -456,10 +478,12 @@ header {
   align-items: center;
 }
 
+/* Applies attributes to p elements in about_text class */
 .about_text p {
   padding: 20px;
 }
 
+/* Applies attributes to team_box class */
 .team_box {
   display: flex;
   background-color: #fa8320;
@@ -475,11 +499,13 @@ header {
   justify-content: space-evenly;
 }
 
+/* Applies attributes to team_icon class */
 .team_icon {
   height: fit-content;
   padding: 20px;
 }
 
+/* Applies attributes to team_text class */
 .team_text  {
   background-color: gray;
   text-align: center;
@@ -487,6 +513,7 @@ header {
   padding: 10px;
 }
 
+/* Applies attributes to contact_boxes class */
 .contact_boxes {
   display: flex;
   flex-wrap: wrap;
@@ -495,8 +522,8 @@ header {
 
 }
 
+/* Applies attributes to contact_form class */
 .contact_form {
-
   padding-top: 15px;
   padding-bottom: 15px;
   display: block;
@@ -507,29 +534,33 @@ header {
   text-align: center;
 } 
 
+/* Applies attributes to p elements in contact_form class */
 .contact_form p {
   margin-bottom: 15px;
 }
 
+/* Applies attributes to input elements in contact_form class */
 .contact_form input {
   margin: 10px;
   color: white;
 }
 
+/* Applies attributes to social_media_box class */
 .social_media_box {
-  
   width: 80%;
   max-width: 450px;
   height: fit-content;
   background-color: #fa8320;
 }
 
+/* Applies attributes to name_forms class */
 .name_forms {
   background-color: transparent;
   border: white 2px solid;
   padding: 5px;
 }
 
+/* Applies attributes to email_form class */
 .email_form {
   background-color: transparent;
   border: white 2px solid;
@@ -537,6 +568,7 @@ header {
   width: 80%;
 }
 
+/* Applies attributes to message_form class */
 .message_form {
   color: white;
   font-family: 'Roboto', sans-serif;
@@ -549,6 +581,7 @@ header {
   height: 150px;
 }
 
+/* Applies attributes to contact_btn ID */
 #contact_btn {
   display: block;
   margin-left: 10%;
@@ -559,21 +592,26 @@ header {
   
 }
 
+/* Applies background-colour to contact_btn ID when hovered */
 #contact_btn:hover {
   background-color: #555;
   color: white;
   cursor: pointer;
 }
+
+/* Applies attributes to social_media_box_title class */
 .social_media_box_title {
   padding-top: 17px;
   padding-bottom: 17px;
 }
 
+/* Applies attributes to social_media_box_p class */
 .social_media_box_p {
   padding-left: 10px;
   padding-right: 10px;
 }
 
+/* Applies attributes to court_name class */
 .court_name {
   margin-right: 25px;
   margin-top: 20px;
@@ -581,43 +619,15 @@ header {
   font-size: 32px;
   text-align: left; 
 }
-
-@media screen and (max-width: 1049px) {
-  .court_name {
-    
-    margin-left: 10%;
-    
-  }
-  .court_place {
-    margin-left: 10%;
-  }
-}
-
-
-
-@media screen and (min-width: 1050px) {
-  .court_name {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px;
-  }
-  .court_place {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px;
-  }
-}
-
+ /* Applies attributes to court_place class */
 .court_place {
   display: block;
   color: gray;
   font-size: 1rem;
   text-align: left;
-  
 }
 
+ /* Applies attributes to court_page class */
 .court_page {
   display: flex;
   flex-wrap: wrap;
@@ -627,6 +637,7 @@ header {
   margin-right: 25px;
 }
 
+ /* Applies attributes to court_info class */
 .court_info {
   background-color: gray;
   width: 100%;
@@ -634,6 +645,7 @@ header {
   margin-bottom: 25px;
 }
 
+ /* Applies attributes to court_info_name class */
 .court_info_name {
   text-align: left;
   margin-left: 25px;
@@ -642,6 +654,7 @@ header {
   font-size: 1.5rem;
 }
 
+ /* Applies attributes to court_info_type class */
 .court_info_type {
   text-align: left;
   margin-left: 25px;
@@ -649,6 +662,7 @@ header {
   font-size: 1rem;
 }
 
+ /* Applies attributes to court_info_address class */
 .court_info_address {
   text-align: left;
   margin-left: 25px;
@@ -658,6 +672,7 @@ header {
   font-size: 1rem;
 }
 
+ /* Applies attributes to court_map_vote class */
 .court_map_vote {
   background-color: #fa8320;
   width: 100%;
@@ -665,6 +680,7 @@ header {
   margin-bottom: 25px;
 }
 
+ /* Applies attributes to court_map_text class */
 .court_map_text {
   text-align: left;
   margin-left: 25px;
@@ -672,6 +688,7 @@ header {
   font-size: 1.5rem;
 }
 
+ /* Applies attributes to iframe elements in court_map_vote class */
 .court_map_vote iframe {
   display: block;
   margin-right: auto;
@@ -680,6 +697,7 @@ header {
   margin-bottom: 0px;
 }
 
+/* Applies attributes to vote_text class */
 .vote_text {
   text-align: left;
   margin-left: 25px;
@@ -687,39 +705,33 @@ header {
   margin-top: auto;
 }
 
-.voteBox {
+/* Applies attributes to vote_box class */
+.vote_box {
+  display: flex;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-#likeButton {
+/* Applies attributes to like_button id */
+#like_button {
   margin-left: 15px;
   margin-bottom: 0px;
   height: 25px;
   width: 25px;
   border: none;
-  
 }
 
-#likeNumber {
-  margin-left: 10px;;
-  margin-top: 3px;
-  
-  
-}
-
-#dislikeNumber {
+/* Applies attributes to like_number and dislike number id */
+#like_number, #dislike_number  {
   margin-left: 10px;
   margin-top: 3px;
 }
 
-#dislikeButton {
+ /* Applies attributes to dislike button id */
+#dislike_button {
   margin-left: 10px;
   height: 25px;
   width: 25px;
   border: none;
 }
 
-.courtBody {
-  margin-top: 10px;
-}
