@@ -16,17 +16,24 @@ function displayCourts() {
     let htmlContent = "";
 
     for(let i = 0 ; i < courts.length ; i++) {
-        let courtContent = `<div class="court_box">
+        let courtContent = `<!--Court box-->
+                            <div class="court_box">
+                                <!--Court img-->
                                 <img src=${courts[i].image_URL}>
                                 <br>
+                                <!--Court body-->
                                 <div class="court_body">
+                                    <!--Court name-->
                                     <h3>${courts[i].name}</h3>
                                     <br>
+                                    <!--Court place-->
                                     <p>${courts[i].place}</p>
                                     <br>
                                 </div>
-                                    <p>👍&nbsp;&nbsp;${courts[i].thumbs_up}&nbsp;&nbsp;&nbsp;&nbsp;👎&nbsp;&nbsp;${courts[i].thumbs_down}</p>
-                                    <br>
+                                <!--Court votes-->
+                                <p>👍&nbsp;&nbsp;${courts[i].thumbs_up}&nbsp;&nbsp;&nbsp;&nbsp;👎&nbsp;&nbsp;${courts[i].thumbs_down}</p>
+                                <br>
+                                <!--Court button-->
                                 <div class="button_wrapper"><a class="button_1" href=${courts[i].link_URL}>View Court</a></div>
                             </div>`;
 
@@ -149,26 +156,31 @@ var chb = () => {
 var topRated= () => {
     let Top3RatedCourts = courts.slice(0, 3);
     let htmlContent = "";
-
     for(let i = 0 ; i < Top3RatedCourts.length ; i++) {
-        let courtContent = `<div class="top_3_courts">
+        let courtContent = `<!--Court box-->
+                            <div class="top_3_courts">
+                                <!--Court img-->
                                 <img src=${courts[i].image_URL}>
                                 <br>
+                                <!--Court body-->
                                 <div class="court_body">
+                                    <!--Court name-->
                                     <h3>${courts[i].name}</h3>
                                     <br>
+                                    <!--Court place-->
                                     <p>${courts[i].place}</p>
                                     <br>
                                 </div>
-                                    <p>👍&nbsp;&nbsp;${courts[i].thumbs_up}&nbsp;&nbsp;&nbsp;&nbsp;👎&nbsp;&nbsp;${courts[i].thumbs_down}</p>
-                                    <br>
+                                <!--Court votes-->
+                                <p>👍&nbsp;&nbsp;${courts[i].thumbs_up}&nbsp;&nbsp;&nbsp;&nbsp;👎&nbsp;&nbsp;${courts[i].thumbs_down}</p>
+                                <br>
+                                <!--Court button-->
                                 <div class="button_wrapper"><a class="button_1" href=${courts[i].link_URL}>View Court</a></div>
                             </div>`;
 
                         htmlContent += courtContent;
-}
-
-document.getElementById("top_3_courts").innerHTML = htmlContent;
+    }
+    document.getElementById("top_3_courts").innerHTML = htmlContent;
 }
 
 
