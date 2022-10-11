@@ -140,28 +140,28 @@
   }
 }
 
-/* Applies attributes to all elements */
+/* Apply attributes to all elements */
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
-/* Applies attrtibutes to html */
+/* Apply attrtibutes to html */
 html {
   position: relative;
   min-height: 100%;
   padding-bottom: 100px;
 }
 
-/* Applies attrtibutes to body */
+/* Apply attrtibutes to body */
 body {
   height: 100%;
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
 
-/* Applies attrtibutes to footer */
+/* Apply attrtibutes to footer */
 .footer {
   position: absolute;
   bottom: 0;
@@ -170,7 +170,7 @@ body {
   background-color: gray;
 }
 
-/* Applies attrtibutes to header */
+/* Apply attrtibutes to header */
 header {
   height: fit-content;
   padding-top: 10px;
@@ -182,7 +182,7 @@ header {
 	justify-content: left;
 }
 
-/* Applies attrtibutes to header image */
+/* Apply attrtibutes to header image */
 .header_image {
   display: flex;
   padding-left: 10px;
@@ -190,7 +190,7 @@ header {
   height: 45px;
 }
 
-/* Applies attrtibutes to header text */
+/* Apply attrtibutes to header text */
 .header_text {
   display: flex;
   padding-left: 20px;
@@ -198,14 +198,14 @@ header {
   
 }
 
-/* Applies attrtibutes to navigation bar */
+/* Apply attrtibutes to navigation bar */
 .nav {
   min-height: 4.5vh;
   overflow: hidden;
   background-color: gray; 
 }
 
-/* Applies attrtibutes to navigation bar links */
+/* Apply attrtibutes to navigation bar links */
 .nav a {
   float: left;
   display: block;
@@ -217,7 +217,7 @@ header {
   font-weight: 400;
 }
 
-/* Applies background-colour to active link */
+/* Apply background-colour to active link */
 .active {
   background-color: #fa8320;
 }
@@ -227,24 +227,24 @@ header {
   display: none;
 }
 
-/* Applies background-colour to nav-bar links expect active link, when hovered over */
+/* Apply background-colour to nav-bar links expect active link, when hovered over */
 .nav a:hover:not(.active) {
   background-color: #555;
   color: white;
 }
 
-/* Applies attributes to h3 and p elements */ 
+/* Apply attributes to h3 and p elements */ 
 h3, p {
   text-align: center;
   color: white;
 }
 
-/* Applies attributes to section_1 class */
+/* Apply attributes to section_1 class */
 .section_1 {
   height: fit-content;
 }
 
-/* Applies attributes to home_title class */
+/* Apply attributes to home_title class */
 .home_title {
   text-align: center;
   color:  gray;
@@ -254,7 +254,7 @@ h3, p {
   font-size: 26px;
   }
 
-/* Applies attributes to pages_title class */
+/* Apply attributes to pages_title class */
 .pages_title {
   text-align: center;
   color:  gray;
@@ -264,7 +264,7 @@ h3, p {
   font-size: 30px;
   }
 
-/* Applies attributes to search box container */
+/* Apply attributes to search box container */
 .search_box {
   display: flex;
   background-color: gray;
@@ -276,7 +276,7 @@ h3, p {
   border-radius: 60px;
 }
 
-/* Applies attributes to search box */
+/* Apply attributes to search box */
 .search {
   background: transparent;
   flex: 1;
@@ -288,18 +288,18 @@ h3, p {
   font-size: 1rem;
 }
 
-/* Applies attributes to search box placeholder text */
+/* Apply attributes to search box placeholder text */
 ::placeholder {
   color: white;
   font-size: 14px;
 }
 
-/* Applies attributes to section_2 class */
+/* Apply attributes to section_2 class */
 .section_2 {
   height: fit-content;  
 }
 
-/* Applies attributes to h2 elements in section_2 class  */
+/* Apply attributes to h2 elements in section_2 class  */
 .section_2 h2 {
   text-align: center;
   color:  gray;
@@ -309,7 +309,7 @@ h3, p {
   font-size: 18px;
 }
 
-/* Applies attributes to h2 elements in section_3 class  */
+/* Apply attributes to h2 elements in section_3 class  */
 .section_3 h2 {
   text-align: center;
   color:  gray;
@@ -319,7 +319,7 @@ h3, p {
   font-size: 18px;
 }
 
-/* Applies attributes to courts_box class */
+/* Apply attributes to courts_box class */
 .courts_box {
 	display: flex;
 	flex-direction: row;
@@ -327,7 +327,7 @@ h3, p {
   justify-content: center;   
 }
 
-/* Applies attributes to top_3_courts class */
+/* Apply attributes to top_3_courts class */
 .top_3_courts {
   margin-left: 40px;
   margin-right: 40px;
@@ -341,7 +341,7 @@ h3, p {
   transition: scale 350ms ease, opacity 350ms linear;
 }
 
-/* Applies attributes to court_box class */
+/* Apply attributes to court_box class */
 .court_box {
   margin-left: 40px;
   margin-right: 40px;
@@ -355,12 +355,12 @@ h3, p {
   transition: scale 350ms ease, opacity 350ms linear;
 }
 
-/* Applies attributes to court_body class */
+/* Apply attributes to court_body class */
 .court_body {
   margin-top: 10px;
 }
 
-/* Applies fade affect to court boxes */
+/* Apply fade affect to court boxes */
 .courts_box:has(.court_box:hover) .court_box:not(:hover) {
   scale: 0.9;
   opacity: 0.7;
@@ -371,12 +371,12 @@ h3, p {
   opacity: 0.7;
 }
 
-/* Applies attributes to search_text class */
+/* Apply attributes to search_text class */
 #search_text {
   display: none;
 }
 
-/* Applies attributes to no results text */
+/* Apply attributes to no results text */
 #no_results {
   margin-top: 1rem;
   display: none;
@@ -391,7 +391,7 @@ h3, p {
   
 }
 
-/* Applies attributes to court images */
+/* Apply attributes to court images */
 .court_box img {
   width: 270px;
   height: 180.36px;
@@ -402,7 +402,7 @@ h3, p {
   height: 180.36px;
 }
 
-/* Applies attributes to court button */
+/* Apply attributes to court button */
 .button_1 {
   display: block;
 	text-align: center;
@@ -410,7 +410,7 @@ h3, p {
 	font-weight: bold;
 }
 
-/* Applies attributes to court button-wrapper */
+/* Apply attributes to court button-wrapper */
 .button_wrapper {
   height: 3rem;
   background-color: gray;
@@ -419,49 +419,49 @@ h3, p {
   display: flex;
 }
 
-/* Applies attributes to footer icons class */
+/* Apply attributes to footer icons class */
 .footer_icons {
   text-align: center;
 }
 
-/* Applies attributes to small social icons class */
+/* Apply attributes to small social icons class */
 .social_small_icons {
   margin-bottom: 17px;
   text-align: center;
 }
 
-/* Applies attributes to social big icons class */
+/* Apply attributes to social big icons class */
 .social_big_icons {
   margin-bottom: 17px;
   text-align: center;
 }
 
-/* Applies attributes to font awesome facebook icon */
+/* Apply attributes to font awesome facebook icon */
 .fa-facebook {
   color: white;
 }
 
-/* Applies attributes to font awesome youtube icon */
+/* Apply attributes to font awesome youtube icon */
 .fa-youtube {
   color: white;
 }
 
-/* Applies attributes to font awesome twitter icon */
+/* Apply attributes to font awesome twitter icon */
 .fa-twitter {
   color: white;
 }
 
-/* Applies attributes to font awesome instagram icon */
+/* Apply attributes to font awesome instagram icon */
 .fa-instagram {
   color: white;
 }
 
-/* Applies attributes to font awesome snapchat icon */
+/* Apply attributes to font awesome snapchat icon */
 .fa-snapchat {
   color: white;
 }
 
-/* Applies attributes to about_text class */
+/* Apply attributes to about_text class */
 .about_text {
   display: flex;
   background-color: #fa8320;
@@ -476,12 +476,12 @@ h3, p {
   align-items: center;
 }
 
-/* Applies attributes to p elements in about_text class */
+/* Apply attributes to p elements in about_text class */
 .about_text p {
   padding: 20px;
 }
 
-/* Applies attributes to team_box class */
+/* Apply attributes to team_box class */
 .team_box {
   display: flex;
   background-color: #fa8320;
@@ -497,13 +497,13 @@ h3, p {
   justify-content: space-evenly;
 }
 
-/* Applies attributes to team_icon class */
+/* Apply attributes to team_icon class */
 .team_icon {
   height: fit-content;
   padding: 20px;
 }
 
-/* Applies attributes to team_text class */
+/* Apply attributes to team_text class */
 .team_text  {
   background-color: gray;
   text-align: center;
@@ -511,7 +511,7 @@ h3, p {
   padding: 10px;
 }
 
-/* Applies attributes to contact_boxes class */
+/* Apply attributes to contact_boxes class */
 .contact_boxes {
   display: flex;
   flex-wrap: wrap;
@@ -520,7 +520,7 @@ h3, p {
 
 }
 
-/* Applies attributes to contact_form class */
+/* Apply attributes to contact_form class */
 .contact_form {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -532,18 +532,18 @@ h3, p {
   text-align: center;
 } 
 
-/* Applies attributes to p elements in contact_form class */
+/* Apply attributes to p elements in contact_form class */
 .contact_form p {
   margin-bottom: 15px;
 }
 
-/* Applies attributes to input elements in contact_form class */
+/* Apply attributes to input elements in contact_form class */
 .contact_form input {
   margin: 10px;
   color: white;
 }
 
-/* Applies attributes to social_media_box class */
+/* Apply attributes to social_media_box class */
 .social_media_box {
   width: 80%;
   max-width: 450px;
@@ -551,14 +551,14 @@ h3, p {
   background-color: #fa8320;
 }
 
-/* Applies attributes to name_forms class */
+/* Apply attributes to name_forms class */
 .name_forms {
   background-color: transparent;
   border: white 2px solid;
   padding: 5px;
 }
 
-/* Applies attributes to email_form class */
+/* Apply attributes to email_form class */
 .email_form {
   background-color: transparent;
   border: white 2px solid;
@@ -566,7 +566,7 @@ h3, p {
   width: 80%;
 }
 
-/* Applies attributes to message_form class */
+/* Apply attributes to message_form class */
 .message_form {
   color: white;
   font-family: 'Roboto', sans-serif;
@@ -579,7 +579,7 @@ h3, p {
   height: 150px;
 }
 
-/* Applies attributes to contact_btn ID */
+/* Apply attributes to contact_btn ID */
 #contact_btn {
   display: block;
   margin-left: 10%;
@@ -590,33 +590,33 @@ h3, p {
   
 }
 
-/* Applies background-colour to contact_btn ID when hovered */
+/* Apply background-colour to contact_btn ID when hovered */
 #contact_btn:hover {
   background-color: #555;
   color: white;
   cursor: pointer;
 }
 
-/* Applies attributes to social_media_box_title class */
+/* Apply attributes to social_media_box_title class */
 .social_media_box_title {
   padding-top: 17px;
   padding-bottom: 17px;
 }
 
-/* Applies attributes to social_media_box_p class */
+/* Apply attributes to social_media_box_p class */
 .social_media_box_p {
   padding-left: 10px;
   padding-right: 10px;
 }
 
-/* Applies attributes to court_name class */
+/* Apply attributes to court_name class */
 .court_name {
   margin-top: 20px;
   color: gray;
   font-size: 32px;
   text-align: left; 
 }
- /* Applies attributes to court_place class */
+ /* Apply attributes to court_place class */
 .court_place {
   display: block;
   color: gray;
@@ -624,7 +624,7 @@ h3, p {
   text-align: left;
 }
 
- /* Applies attributes to court_page class */
+ /* Apply attributes to court_page class */
 .court_page {
   display: flex;
   flex-wrap: wrap;
@@ -634,7 +634,7 @@ h3, p {
   margin-right: 25px;
 }
 
- /* Applies attributes to court_info class */
+ /* Apply attributes to court_info class */
 .court_info {
   background-color: gray;
   width: 100%;
@@ -642,7 +642,7 @@ h3, p {
   margin-bottom: 25px;
 }
 
- /* Applies attributes to court_info_name class */
+ /* Apply attributes to court_info_name class */
 .court_info_name {
   text-align: left;
   margin-left: 25px;
@@ -651,7 +651,7 @@ h3, p {
   font-size: 1.5rem;
 }
 
- /* Applies attributes to court_info_type class */
+ /* Apply attributes to court_info_type class */
 .court_info_type {
   text-align: left;
   margin-left: 25px;
@@ -659,7 +659,7 @@ h3, p {
   font-size: 1rem;
 }
 
- /* Applies attributes to court_info_address class */
+ /* Apply attributes to court_info_address class */
 .court_info_address {
   text-align: left;
   margin-left: 25px;
@@ -669,7 +669,7 @@ h3, p {
   font-size: 1rem;
 }
 
- /* Applies attributes to court_map_vote class */
+ /* Apply attributes to court_map_vote class */
 .court_map_vote {
   background-color: #fa8320;
   width: 100%;
@@ -677,7 +677,7 @@ h3, p {
   margin-bottom: 25px;
 }
 
- /* Applies attributes to court_map_text class */
+ /* Apply attributes to court_map_text class */
 .court_map_text {
   text-align: left;
   margin-left: 25px;
@@ -685,7 +685,7 @@ h3, p {
   font-size: 1.5rem;
 }
 
- /* Applies attributes to iframe elements in court_map_vote class */
+ /* Apply attributes to iframe elements in court_map_vote class */
 .court_map_vote iframe {
   display: block;
   margin-right: auto;
@@ -694,7 +694,7 @@ h3, p {
   margin-bottom: 0px;
 }
 
-/* Applies attributes to vote_text class */
+/* Apply attributes to vote_text class */
 .vote_text {
   text-align: left;
   margin-left: 25px;
@@ -702,14 +702,14 @@ h3, p {
   margin-top: auto;
 }
 
-/* Applies attributes to vote_box class */
+/* Apply attributes to vote_box class */
 .vote_box {
   display: flex;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-/* Applies attributes to like_button id */
+/* Apply attributes to like_button id */
 #like_button {
   margin-left: 15px;
   margin-bottom: 0px;
@@ -718,13 +718,13 @@ h3, p {
   border: none;
 }
 
-/* Applies attributes to like_number and dislike number id */
+/* Apply attributes to like_number and dislike number id */
 #like_number, #dislike_number  {
   margin-left: 10px;
   margin-top: 3px;
 }
 
- /* Applies attributes to dislike button id */
+ /* Apply attributes to dislike button id */
 #dislike_button {
   margin-left: 10px;
   height: 25px;
