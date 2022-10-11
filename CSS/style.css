@@ -88,9 +88,7 @@
 
 @media screen and (max-width: 1049px) {
   .court_name {
-    
     margin-left: 10%;
-    
   }
   .court_place {
     margin-left: 10%;
@@ -613,7 +611,6 @@ h3, p {
 
 /* Applies attributes to court_name class */
 .court_name {
-  margin-right: 25px;
   margin-top: 20px;
   color: gray;
   font-size: 32px;
