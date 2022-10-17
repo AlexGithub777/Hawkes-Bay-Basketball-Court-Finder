@@ -265,18 +265,27 @@ window.onload = function() {
         displayCourts();
         napier();
     }
+
     if (window.location.href.indexOf('hastings.html') > -1) {
         displayCourts();
         hastings();
     }
-    if (window.location.href.indexOf('index.html') > -1) {
+
+    if (window.location.pathname === '/') {
         displayCourts();
         topRated();
     }
+
+    if (window.location.pathname === '/index.html') {
+        displayCourts();
+        topRated();
+    }
+
     if (window.location.href.indexOf('wairoa.html') > -1) {
         displayCourts();
         wairoa();
     }
+
     if (window.location.href.indexOf('central_hawkes_bay.html') > -1) {
         displayCourts();
         chb();
