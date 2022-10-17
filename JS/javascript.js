@@ -23,7 +23,7 @@ function displayCourts() {
         let courtContent = `<!--Court box-->
                             <div class="court_box">
                                 <!--Court img-->
-                                <img src=${courts[i].image_URL}>
+                                <img src=${courts[i].image_URL} alt='Court image'>
                                 <br>
                                 <!--Court body-->
                                 <div class="court_body">
@@ -58,7 +58,7 @@ function topRated() {
         let courtContent = `<!--Court box-->
                             <div class="top_3_courts">
                                 <!--Court img-->
-                                <img src=${courts[i].image_URL}>
+                                <img src=${courts[i].image_URL} alt='Court image>
                                 <br>
                                 <!--Court body-->
                                 <div class="court_body">
