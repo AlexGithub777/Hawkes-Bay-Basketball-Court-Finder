@@ -269,7 +269,7 @@ window.onload = function() {
         displayCourts();
         hastings();
     }
-    if (window.location.href.indexOf('home.html') > -1) {
+    if (window.location.href.indexOf('index.html') > -1) {
         displayCourts();
         topRated();
     }
