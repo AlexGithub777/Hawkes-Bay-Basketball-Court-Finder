@@ -58,7 +58,7 @@ function topRated() {
         let courtContent = `<!--Court box-->
                             <div class="top_3_courts">
                                 <!--Court img-->
-                                <img src=${courts[i].image_URL} alt='Court image>
+                                <img src=${courts[i].image_URL} alt='Court image'>
                                 <br>
                                 <!--Court body-->
                                 <div class="court_body">
