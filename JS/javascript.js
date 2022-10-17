@@ -271,11 +271,6 @@ window.onload = function() {
         hastings();
     }
 
-    if (window.location.pathname === 'Website/') {
-        displayCourts();
-        topRated();
-    }
-
     if (window.location.href.indexOf('index.html') > -1) {
         displayCourts();
         topRated();
