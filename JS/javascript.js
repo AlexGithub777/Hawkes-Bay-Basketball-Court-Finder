@@ -271,12 +271,12 @@ window.onload = function() {
         hastings();
     }
 
-    if (window.location.pathname === '/') {
+    if (window.location.pathname === 'Website/') {
         displayCourts();
         topRated();
     }
 
-    if (window.location.pathname === '/index.html') {
+    if (window.location.pathname === 'Website/index.html') {
         displayCourts();
         topRated();
     }
