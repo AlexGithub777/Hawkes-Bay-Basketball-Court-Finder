@@ -161,6 +161,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.disclaimer_text {
+  text-align: center;
+  color: gray;
+  margin-bottom: 20px;
+}
 /* Apply attrtibutes to footer */
 .footer {
   position: absolute;
