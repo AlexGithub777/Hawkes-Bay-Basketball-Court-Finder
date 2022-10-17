@@ -276,7 +276,7 @@ window.onload = function() {
         topRated();
     }
 
-    if (window.location.pathname === '/index.html') {
+    if (window.location.href.indexOf('index.html') > -1) {
         displayCourts();
         topRated();
     }
