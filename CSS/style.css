@@ -165,7 +165,10 @@ body {
   text-align: center;
   color: gray;
   margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   font-size: 0.9em;
+
 }
 /* Apply attrtibutes to footer */
 .footer {
