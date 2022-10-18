@@ -1,16 +1,16 @@
 // Create courts array 
-let courts = [{name: "Marine Parade", place: "Napier", thumbs_up: 21, thumbs_down: 6, image_URL: "Images/marine_parade.jpeg", link_URL: "Courts/marine_parade.html"},
-              {name: "Fitzgerald Place Reserve", place: "Napier", thumbs_up: 18, thumbs_down: 6, image_URL: "Images/fitzgerald_place_reserve.jpg", link_URL: "Courts/fitzgerald_place_reserve.html"},
-              {name: "Flaxmere Park", place: "Hastings", thumbs_up: 16, thumbs_down: 3, image_URL: "Images/flaxmere_park.jpg", link_URL: "Courts/flaxmere_park.html"}, 
-              {name: "St Joseph's School", place: "Central Hawkes Bay", thumbs_up: 22, thumbs_down: 5, image_URL: "Images/st_joseph's_school.png", link_URL: "Courts/st_joseph's_school.html"},
-              {name: "Wairoa Community Centre", place: "Wairoa", thumbs_up: 9, thumbs_down: 1, image_URL: "Images/wairoa_community_centre.jpg", link_URL: "Courts/wairoa_community_centre.html"},
-              {name: "Kirkpatrick Park", place: "Hastings", thumbs_up: 14, thumbs_down: 3, image_URL: "Images/kirkpatrick_park.jpg", link_URL: "Courts/kirkpatrick_park.html"},
-              {name: "Mitre 10 Park", place: "Hastings", thumbs_up: 28, thumbs_down: 7, image_URL: "Images/mitre_10_park.jpg", link_URL: "Courts/mitre_10_park.html"},
-              {name: "Russell Park", place: "Central Hawkes Bay", thumbs_up: 5, thumbs_down: 5, image_URL: "Images/russell_park.jpeg", link_URL: "Courts/russell_park.html"},
-              {name: "Anderson Park", place: "Napier", thumbs_up: 15, thumbs_down: 2, image_URL: "Images/anderson_park.jpg", link_URL: "Courts/anderson_park.html"},
-              {name: "William Nelson Park", place: "Hastings", thumbs_up: 17, thumbs_down: 0, image_URL: "Images/william_nelson_park.png", link_URL: "Courts/william_nelson_park.html"},
-              {name: "Roberts Terrace Park", place: "Napier", thumbs_up: 11, thumbs_down: 4, image_URL: "Images/roberts_terrace_reserve.jpg", link_URL: "Courts/roberts_terrace_reserve.html"},
-              {name: "Len Harlen Park", place: "Hastings", thumbs_up: 7, thumbs_down: 0, image_URL: "Images/len_harlen_park.png", link_URL: "Courts/len_harlen_park.html"}]
+let courts = [{name: "Marine Parade", place: "Napier", thumbs_up: 21, thumbs_down: 6, image_URL: "Images/marine_parade.webp", link_URL: "Courts/marine_parade.html"},
+              {name: "Fitzgerald Place Reserve", place: "Napier", thumbs_up: 18, thumbs_down: 6, image_URL: "Images/fitzgerald_place_reserve.webp", link_URL: "Courts/fitzgerald_place_reserve.html"},
+              {name: "Flaxmere Park", place: "Hastings", thumbs_up: 16, thumbs_down: 3, image_URL: "Images/flaxmere_park.webp", link_URL: "Courts/flaxmere_park.html"}, 
+              {name: "St Joseph's School", place: "Central Hawkes Bay", thumbs_up: 22, thumbs_down: 5, image_URL: "Images/st_joseph's_school.webp", link_URL: "Courts/st_joseph's_school.html"},
+              {name: "Wairoa Community Centre", place: "Wairoa", thumbs_up: 9, thumbs_down: 1, image_URL: "Images/wairoa_community_centre.webp", link_URL: "Courts/wairoa_community_centre.html"},
+              {name: "Kirkpatrick Park", place: "Hastings", thumbs_up: 14, thumbs_down: 3, image_URL: "Images/kirkpatrick_park.webp", link_URL: "Courts/kirkpatrick_park.html"},
+              {name: "Mitre 10 Park", place: "Hastings", thumbs_up: 28, thumbs_down: 7, image_URL: "Images/mitre_10_park.webp", link_URL: "Courts/mitre_10_park.html"},
+              {name: "Russell Park", place: "Central Hawkes Bay", thumbs_up: 5, thumbs_down: 5, image_URL: "Images/russell_park.webp", link_URL: "Courts/russell_park.html"},
+              {name: "Anderson Park", place: "Napier", thumbs_up: 15, thumbs_down: 2, image_URL: "Images/anderson_park.webp", link_URL: "Courts/anderson_park.html"},
+              {name: "William Nelson Park", place: "Hastings", thumbs_up: 17, thumbs_down: 0, image_URL: "Images/william_nelson_park.webp", link_URL: "Courts/william_nelson_park.html"},
+              {name: "Roberts Terrace Park", place: "Napier", thumbs_up: 11, thumbs_down: 4, image_URL: "Images/roberts_terrace_reserve.webp", link_URL: "Courts/roberts_terrace_reserve.html"},
+              {name: "Len Harlen Park", place: "Hastings", thumbs_up: 7, thumbs_down: 0, image_URL: "Images/len_harlen_park.webp", link_URL: "Courts/len_harlen_park.html"}]
 
 // Display courts function 
 function displayCourts() {

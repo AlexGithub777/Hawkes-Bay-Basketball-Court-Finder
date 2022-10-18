@@ -195,6 +195,9 @@ header {
 .header_image {
   display: flex;
   padding-left: 10px;
+}
+
+.header_image img {
   width: 45px;
   height: 45px;
 }
