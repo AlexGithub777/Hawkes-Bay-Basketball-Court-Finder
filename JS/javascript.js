@@ -98,36 +98,68 @@ let courts = [
     },
 ];
 
-// Helper function to detect if we're on the home page
-function isHomePage() {
-    const pathname = window.location.pathname;
-    const filename = pathname.split("/").pop();
-
-    // Debug logging - remove this after fixing
-    console.log("Debug - pathname:", pathname);
-    console.log("Debug - filename:", filename);
-    console.log("Debug - href:", window.location.href);
-    console.log("Debug - hostname:", window.location.hostname);
-
-    // For custom domains, check simple patterns
-    const isHome =
-        pathname === "/" || // Root path (most common for custom domains)
-        pathname === "/index.html" || // Direct index.html
-        filename === "index.html" || // Just index.html filename
-        filename === "" || // Empty filename (root or trailing slash)
-        // Fallback: if we have the required DOM elements, assume it's home
-        (document.getElementById("courts_box") &&
-            document.getElementById("top_3_courts"));
-
-    console.log("Debug - isHome result:", isHome);
-    return isHome;
-}
-
 // Helper function to check if URL contains a specific page name
 function pageContains(pageName) {
     return (
         window.location.href.toLowerCase().indexOf(pageName.toLowerCase()) > -1
     );
+}
+
+// Helper function to get current page type
+function getCurrentPageType() {
+    const pathname = window.location.pathname.toLowerCase();
+    const href = window.location.href.toLowerCase();
+
+    // Log for debugging
+    console.log("Current pathname:", pathname);
+    console.log("Current href:", href);
+
+    // Check for individual court pages first (most specific)
+    if (pageContains("marine_parade")) return "marine_parade";
+    if (pageContains("fitzgerald_place_reserve"))
+        return "fitzgerald_place_reserve";
+    if (pageContains("flaxmere_park")) return "flaxmere_park";
+    if (pageContains("st_joseph's_school")) return "st_joseph's_school";
+    if (pageContains("wairoa_community_centre"))
+        return "wairoa_community_centre";
+    if (pageContains("kirkpatrick_park")) return "kirkpatrick_park";
+    if (pageContains("mitre_10_park")) return "mitre_10_park";
+    if (pageContains("russell_park")) return "russell_park";
+    if (pageContains("anderson_park")) return "anderson_park";
+    if (pageContains("william_nelson_park")) return "william_nelson_park";
+    if (pageContains("roberts_terrace_reserve"))
+        return "roberts_terrace_reserve";
+    if (pageContains("len_harlen_park")) return "len_harlen_park";
+
+    // Check for city pages
+    if (pageContains("napier")) return "napier";
+    if (pageContains("hastings")) return "hastings";
+    if (pageContains("wairoa")) return "wairoa";
+    if (pageContains("central_hawkes_bay")) return "central_hawkes_bay";
+    if (pageContains("about")) return "about";
+    if (pageContains("contact")) return "contact";
+
+    // Home page detection - multiple methods
+    if (
+        pathname === "/" ||
+        pathname === "/index.html" ||
+        pathname === "" ||
+        pathname.endsWith("/") ||
+        href.match(/^https?:\/\/[^\/]+\/?$/)
+    ) {
+        return "home";
+    }
+
+    // Final fallback - check DOM elements
+    if (
+        document.getElementById("courts_box") &&
+        document.getElementById("top_3_courts")
+    ) {
+        console.log("Home page detected via DOM elements");
+        return "home";
+    }
+
+    return "unknown";
 }
 
 // Display courts function
@@ -165,6 +197,13 @@ function displayCourts() {
     const courtsBox = document.getElementById("courts_box");
     if (courtsBox) {
         courtsBox.innerHTML = htmlContent;
+        console.log(
+            "displayCourts() executed - added",
+            courts.length,
+            "courts"
+        );
+    } else {
+        console.log("courts_box element not found");
     }
 }
 
@@ -197,6 +236,9 @@ function topRated() {
     const top3Courts = document.getElementById("top_3_courts");
     if (top3Courts) {
         top3Courts.innerHTML = htmlContent;
+        console.log("topRated() executed - added top 3 courts");
+    } else {
+        console.log("top_3_courts element not found");
     }
 }
 
@@ -252,7 +294,7 @@ function searchFilter() {
     }
 }
 
-// Napier function - displays napier courts
+// Filter functions for cities
 function napier() {
     const courts = document.getElementsByClassName("court_box");
     let filter = "Napier";
@@ -269,7 +311,6 @@ function napier() {
     }
 }
 
-// Hastings function - displays hastings courts
 function hastings() {
     const courts = document.getElementsByClassName("court_box");
     let filter = "Hastings";
@@ -286,7 +327,6 @@ function hastings() {
     }
 }
 
-// Wairoa function - displays wairoa courts
 function wairoa() {
     const courts = document.getElementsByClassName("court_box");
     let filter = "Wairoa";
@@ -303,7 +343,6 @@ function wairoa() {
     }
 }
 
-// Chb function - displays chb courts
 function chb() {
     const courts = document.getElementsByClassName("court_box");
     let filter = "Central Hawkes Bay";
@@ -320,7 +359,7 @@ function chb() {
     }
 }
 
-// Voting function takes court, takes court_like_num and court_dislike_num as parameters
+// Voting function takes court_like_num and court_dislike_num as parameters
 function voting(court_like_num, court_dislike_num) {
     // Initialize variables
     let currentVotes = { like: court_like_num, dislike: court_dislike_num };
@@ -395,164 +434,140 @@ function voting(court_like_num, court_dislike_num) {
     };
 }
 
-// Load functions when for webpages
+// Initialize page based on current URL
+function initializePage() {
+    const pageType = getCurrentPageType();
+    console.log("Page type detected:", pageType);
+
+    switch (pageType) {
+        case "home":
+            displayCourts();
+            topRated();
+            break;
+
+        case "napier":
+            displayCourts();
+            napier();
+            break;
+
+        case "hastings":
+            displayCourts();
+            hastings();
+            break;
+
+        case "wairoa":
+            displayCourts();
+            wairoa();
+            break;
+
+        case "central_hawkes_bay":
+            displayCourts();
+            chb();
+            break;
+
+        // Individual court pages
+        case "marine_parade":
+            document.getElementById("like_number").innerHTML =
+                courts[0].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[0].thumbs_down;
+            voting(courts[0].thumbs_up, courts[0].thumbs_down);
+            break;
+
+        case "fitzgerald_place_reserve":
+            document.getElementById("like_number").innerHTML =
+                courts[1].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[1].thumbs_down;
+            voting(courts[1].thumbs_up, courts[1].thumbs_down);
+            break;
+
+        case "flaxmere_park":
+            document.getElementById("like_number").innerHTML =
+                courts[2].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[2].thumbs_down;
+            voting(courts[2].thumbs_up, courts[2].thumbs_down);
+            break;
+
+        case "st_joseph's_school":
+            document.getElementById("like_number").innerHTML =
+                courts[3].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[3].thumbs_down;
+            voting(courts[3].thumbs_up, courts[3].thumbs_down);
+            break;
+
+        case "wairoa_community_centre":
+            document.getElementById("like_number").innerHTML =
+                courts[4].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[4].thumbs_down;
+            voting(courts[4].thumbs_up, courts[4].thumbs_down);
+            break;
+
+        case "kirkpatrick_park":
+            document.getElementById("like_number").innerHTML =
+                courts[5].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[5].thumbs_down;
+            voting(courts[5].thumbs_up, courts[5].thumbs_down);
+            break;
+
+        case "mitre_10_park":
+            document.getElementById("like_number").innerHTML =
+                courts[6].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[6].thumbs_down;
+            voting(courts[6].thumbs_up, courts[6].thumbs_down);
+            break;
+
+        case "russell_park":
+            document.getElementById("like_number").innerHTML =
+                courts[7].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[7].thumbs_down;
+            voting(courts[7].thumbs_up, courts[7].thumbs_down);
+            break;
+
+        case "anderson_park":
+            document.getElementById("like_number").innerHTML =
+                courts[8].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[8].thumbs_down;
+            voting(courts[8].thumbs_up, courts[8].thumbs_down);
+            break;
+
+        case "william_nelson_park":
+            document.getElementById("like_number").innerHTML =
+                courts[9].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[9].thumbs_down;
+            voting(courts[9].thumbs_up, courts[9].thumbs_down);
+            break;
+
+        case "roberts_terrace_reserve":
+            document.getElementById("like_number").innerHTML =
+                courts[10].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[10].thumbs_down;
+            voting(courts[10].thumbs_up, courts[10].thumbs_down);
+            break;
+
+        case "len_harlen_park":
+            document.getElementById("like_number").innerHTML =
+                courts[11].thumbs_up;
+            document.getElementById("dislike_number").innerHTML =
+                courts[11].thumbs_down;
+            voting(courts[11].thumbs_up, courts[11].thumbs_down);
+            break;
+
+        default:
+            console.log("Unknown page type, no initialization performed");
+    }
+}
+
+// Load functions when page loads
 window.onload = function () {
-    // For custom domain, simple check first
-    const pathname = window.location.pathname;
-    console.log("Loading page:", pathname);
-
-    // Home page: root or index.html
-    if (
-        pathname === "/" ||
-        pathname === "/index.html" ||
-        pathname.endsWith("index.html")
-    ) {
-        console.log(
-            "Home page detected - running displayCourts() and topRated()"
-        );
-        displayCourts();
-        topRated();
-        return;
-    }
-
-    // Fallback: Check if we have home page elements and run functions
-    const hasHomeElements =
-        document.getElementById("courts_box") &&
-        document.getElementById("top_3_courts");
-    if (hasHomeElements && !pageContains(".html")) {
-        console.log("Home page detected via DOM elements");
-        displayCourts();
-        topRated();
-        return;
-    }
-
-    // City-specific pages
-    if (pageContains("napier.html")) {
-        displayCourts();
-        napier();
-    }
-
-    if (pageContains("hastings.html")) {
-        displayCourts();
-        hastings();
-    }
-
-    if (pageContains("wairoa.html")) {
-        displayCourts();
-        wairoa();
-    }
-
-    if (pageContains("central_hawkes_bay.html")) {
-        displayCourts();
-        chb();
-    }
-
-    // Individual court pages
-    if (pageContains("marine_parade.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[0].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[0].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
-
-    if (pageContains("flaxmere_park.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[2].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[2].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
-
-    if (pageContains("fitzgerald_place_reserve.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[1].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[1].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
-
-    if (pageContains("st_joseph's_school.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[3].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[3].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
-
-    if (pageContains("wairoa_community_centre.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[4].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[4].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
-
-    if (pageContains("kirkpatrick_park.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[5].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[5].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
-
-    if (pageContains("mitre_10_park.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[6].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[6].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
-
-    if (pageContains("russell_park.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[7].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[7].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
-
-    if (pageContains("roberts_terrace_reserve.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[10].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[10].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
-
-    if (pageContains("william_nelson_park.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[9].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[9].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
-
-    if (pageContains("anderson_park.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[8].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[8].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
-
-    if (pageContains("len_harlen_park.html")) {
-        court_like_num = document.getElementById("like_number").innerHTML =
-            courts[11].thumbs_up;
-        court_dislike_num = document.getElementById(
-            "dislike_number"
-        ).innerHTML = courts[11].thumbs_down;
-        voting(court_like_num, court_dislike_num);
-    }
+    initializePage();
 };
