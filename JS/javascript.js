@@ -142,7 +142,7 @@ function getCurrentPageType() {
     // Home page detection - multiple methods
     if (
         pathname === "/" ||
-        pathname === "/index.html" ||
+        pathname === "/" ||
         pathname === "" ||
         pathname.endsWith("/") ||
         href.match(/^https?:\/\/[^\/]+\/?$/)
