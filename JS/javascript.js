@@ -98,11 +98,36 @@ let courts = [
     },
 ];
 
+// Helper function to detect if we're on the home page
+function isHomePage() {
+    const pathname = window.location.pathname;
+    const filename = pathname.split("/").pop();
+
+    // Check multiple conditions for home page
+    return (
+        pathname === "/" || // Root path
+        pathname === "" || // Empty path
+        filename === "index.html" || // Direct index.html
+        filename === "" || // Ends with slash
+        (!filename.includes(".") && pathname.endsWith("/")) || // Directory with trailing slash
+        pathname === "/index.html" || // Absolute index.html
+        // For GitHub Pages - check if we're at the repo root
+        (pathname.match(/^\/[^\/]+\/$/) && !filename.includes("."))
+    );
+}
+
+// Helper function to check if URL contains a specific page name
+function pageContains(pageName) {
+    return (
+        window.location.href.toLowerCase().indexOf(pageName.toLowerCase()) > -1
+    );
+}
+
 // Display courts function
 function displayCourts() {
     // sorts courts by largest number of thumbs up
     courts.sort((a, b) => b.thumbs_up - a.thumbs_up);
-    // Initalize variable
+    // Initialize variable
     let htmlContent = "";
     // Loop through each court in courts array and add html content with parsed values to courtContent
     for (let i = 0; i < courts.length; i++) {
@@ -126,11 +151,14 @@ function displayCourts() {
                                 <!--Court button-->
                                 <div class="button_wrapper"><a class="button_1" href=${courts[i].link_URL}>View Court</a></div>
                             </div>`;
-        // Add courtContent too htmlContent
+        // Add courtContent to htmlContent
         htmlContent += courtContent;
     }
     // Apply htmlContent to courts_box innerHTML
-    document.getElementById("courts_box").innerHTML = htmlContent;
+    const courtsBox = document.getElementById("courts_box");
+    if (courtsBox) {
+        courtsBox.innerHTML = htmlContent;
+    }
 }
 
 // top rated courts function
@@ -159,7 +187,10 @@ function topRated() {
         htmlContent += courtContent;
     }
 
-    document.getElementById("top_3_courts").innerHTML = htmlContent;
+    const top3Courts = document.getElementById("top_3_courts");
+    if (top3Courts) {
+        top3Courts.innerHTML = htmlContent;
+    }
 }
 
 // Contact function
@@ -184,7 +215,7 @@ function searchFilter() {
     const courts = document.getElementsByClassName("court_box");
     let searchResult = 0;
     let filter = input.value;
-    // If input length is greater then 0 display search text, else hide search text
+    // If input length is greater than 0 display search text, else hide search text
     if (filter.length > 0) {
         document.getElementById("search_text").style.display = "block";
     } else {
@@ -196,9 +227,7 @@ function searchFilter() {
         let title = courts[i].querySelector(".court_body");
         if (
             filter.toLowerCase() &&
-            title.textContent
-                .toLocaleLowerCase()
-                .indexOf(filter.toLowerCase()) > -1
+            title.textContent.toLowerCase().indexOf(filter.toLowerCase()) > -1
         ) {
             courts[i].style.display = "block";
             searchResult++;
@@ -224,9 +253,7 @@ function napier() {
         let title = courts[i].querySelector(".court_body");
         if (
             filter.toLowerCase() &&
-            title.textContent
-                .toLocaleLowerCase()
-                .indexOf(filter.toLowerCase()) > -1
+            title.textContent.toLowerCase().indexOf(filter.toLowerCase()) > -1
         ) {
             courts[i].style.display = "block";
         } else {
@@ -243,9 +270,7 @@ function hastings() {
         let title = courts[i].querySelector(".court_body");
         if (
             filter.toLowerCase() &&
-            title.textContent
-                .toLocaleLowerCase()
-                .indexOf(filter.toLowerCase()) > -1
+            title.textContent.toLowerCase().indexOf(filter.toLowerCase()) > -1
         ) {
             courts[i].style.display = "block";
         } else {
@@ -262,9 +287,7 @@ function wairoa() {
         let title = courts[i].querySelector(".court_body");
         if (
             filter.toLowerCase() &&
-            title.textContent
-                .toLocaleLowerCase()
-                .indexOf(filter.toLowerCase()) > -1
+            title.textContent.toLowerCase().indexOf(filter.toLowerCase()) > -1
         ) {
             courts[i].style.display = "block";
         } else {
@@ -281,9 +304,7 @@ function chb() {
         let title = courts[i].querySelector(".court_body");
         if (
             filter.toLowerCase() &&
-            title.textContent
-                .toLocaleLowerCase()
-                .indexOf(filter.toLowerCase()) > -1
+            title.textContent.toLowerCase().indexOf(filter.toLowerCase()) > -1
         ) {
             courts[i].style.display = "block";
         } else {
@@ -292,7 +313,7 @@ function chb() {
     }
 }
 
-// Voting function taskes court, takes court_like_num and court_dislike_num as parameters
+// Voting function takes court, takes court_like_num and court_dislike_num as parameters
 function voting(court_like_num, court_dislike_num) {
     // Initialize variables
     let currentVotes = { like: court_like_num, dislike: court_dislike_num };
@@ -311,13 +332,13 @@ function voting(court_like_num, court_dislike_num) {
             document.getElementById("like_button").style.backgroundColor =
                 "green";
             //Change the current status of "like" button: has been clicked
-            voteStatus.like = true; //
+            voteStatus.like = true;
 
             //Check "dislike" status - if dislike has been voted, down it by one & change status to False & change background color to white
             if (voteStatus.dislike == true) {
                 document.getElementById("dislike_number").innerHTML =
                     currentVotes.dislike;
-                voteStatus.dislike = false; //
+                voteStatus.dislike = false;
                 document.getElementById(
                     "dislike_button"
                 ).style.backgroundColor = "white";
@@ -330,75 +351,75 @@ function voting(court_like_num, court_dislike_num) {
             document.getElementById("like_button").style.backgroundColor =
                 "white";
             //Change the current status of "like" button
-            voteStatus.like = false; //has been clicked
+            voteStatus.like = false;
         }
     };
-    //Click Like button
-    //Click Dislike button
+
     this.dislike = function () {
         //Check current status of "dislike" button (has been clicked or not)
         if (voteStatus.dislike == false) {
-            //Increase a "disLike"  by 1
+            //Increase a "disLike" by 1
             document.getElementById("dislike_number").innerHTML =
                 currentVotes.dislike + 1;
-            //Change the background color of Like button to GREEN
+            //Change the background color of Like button to RED
             document.getElementById("dislike_button").style.backgroundColor =
                 "red";
             //Change the current status of "dislike" button
-            voteStatus.dislike = true; //has been clicked
+            voteStatus.dislike = true;
 
             //Check "like" status - if like has been voted, down it by one & change status to False & change background color to white
             if (voteStatus.like == true) {
                 document.getElementById("like_number").innerHTML =
                     currentVotes.like;
-                voteStatus.like = false; //
+                voteStatus.like = false;
                 document.getElementById("like_button").style.backgroundColor =
                     "white";
             }
         } else {
-            //Keep the current number of of "dislike"
+            //Keep the current number of "dislike"
             document.getElementById("dislike_number").innerHTML =
                 currentVotes.dislike;
             //Change the background color of disLike button to WHITE
             document.getElementById("dislike_button").style.backgroundColor =
                 "white";
             //Change the current status of "dislike" button
-            voteStatus.dislike = false; //has been clicked
+            voteStatus.dislike = false;
         }
     };
 }
 
 // Load functions when for webpages
 window.onload = function () {
-    if (window.location.href.indexOf("napier.html") > -1) {
+    // Home page detection - using the robust helper function
+    if (isHomePage()) {
+        displayCourts();
+        topRated();
+        return; // Exit early to avoid checking other conditions
+    }
+
+    // City-specific pages
+    if (pageContains("napier.html")) {
         displayCourts();
         napier();
     }
 
-    if (window.location.href.indexOf("hastings.html") > -1) {
+    if (pageContains("hastings.html")) {
         displayCourts();
         hastings();
     }
 
-    if (
-        window.location.pathname === "/" ||
-        window.location.pathname.endsWith("index.html")
-    ) {
-        displayCourts();
-        topRated();
-    }
-
-    if (window.location.href.indexOf("wairoa.html") > -1) {
+    if (pageContains("wairoa.html")) {
         displayCourts();
         wairoa();
     }
 
-    if (window.location.href.indexOf("central_hawkes_bay.html") > -1) {
+    if (pageContains("central_hawkes_bay.html")) {
         displayCourts();
         chb();
     }
 
-    if (window.location.href.indexOf("marine_parade.html") > -1) {
+    // Individual court pages
+    if (pageContains("marine_parade.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[0].thumbs_up;
         court_dislike_num = document.getElementById(
@@ -407,7 +428,7 @@ window.onload = function () {
         voting(court_like_num, court_dislike_num);
     }
 
-    if (window.location.href.indexOf("flaxmere_park.html") > -1) {
+    if (pageContains("flaxmere_park.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[2].thumbs_up;
         court_dislike_num = document.getElementById(
@@ -416,7 +437,7 @@ window.onload = function () {
         voting(court_like_num, court_dislike_num);
     }
 
-    if (window.location.href.indexOf("fitzgerald_place_reserve.html") > -1) {
+    if (pageContains("fitzgerald_place_reserve.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[1].thumbs_up;
         court_dislike_num = document.getElementById(
@@ -425,7 +446,7 @@ window.onload = function () {
         voting(court_like_num, court_dislike_num);
     }
 
-    if (window.location.href.indexOf("st_joseph's_school.html") > -1) {
+    if (pageContains("st_joseph's_school.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[3].thumbs_up;
         court_dislike_num = document.getElementById(
@@ -434,7 +455,7 @@ window.onload = function () {
         voting(court_like_num, court_dislike_num);
     }
 
-    if (window.location.href.indexOf("wairoa_community_centre.html") > -1) {
+    if (pageContains("wairoa_community_centre.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[4].thumbs_up;
         court_dislike_num = document.getElementById(
@@ -443,7 +464,7 @@ window.onload = function () {
         voting(court_like_num, court_dislike_num);
     }
 
-    if (window.location.href.indexOf("kirkpatrick_park.html") > -1) {
+    if (pageContains("kirkpatrick_park.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[5].thumbs_up;
         court_dislike_num = document.getElementById(
@@ -452,7 +473,7 @@ window.onload = function () {
         voting(court_like_num, court_dislike_num);
     }
 
-    if (window.location.href.indexOf("mitre_10_park.html") > -1) {
+    if (pageContains("mitre_10_park.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[6].thumbs_up;
         court_dislike_num = document.getElementById(
@@ -461,7 +482,7 @@ window.onload = function () {
         voting(court_like_num, court_dislike_num);
     }
 
-    if (window.location.href.indexOf("russell_park.html") > -1) {
+    if (pageContains("russell_park.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[7].thumbs_up;
         court_dislike_num = document.getElementById(
@@ -470,7 +491,7 @@ window.onload = function () {
         voting(court_like_num, court_dislike_num);
     }
 
-    if (window.location.href.indexOf("roberts_terrace_reserve.html") > -1) {
+    if (pageContains("roberts_terrace_reserve.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[10].thumbs_up;
         court_dislike_num = document.getElementById(
@@ -479,7 +500,7 @@ window.onload = function () {
         voting(court_like_num, court_dislike_num);
     }
 
-    if (window.location.href.indexOf("william_nelson_park.html") > -1) {
+    if (pageContains("william_nelson_park.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[9].thumbs_up;
         court_dislike_num = document.getElementById(
@@ -488,7 +509,7 @@ window.onload = function () {
         voting(court_like_num, court_dislike_num);
     }
 
-    if (window.location.href.indexOf("anderson_park.html") > -1) {
+    if (pageContains("anderson_park.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[8].thumbs_up;
         court_dislike_num = document.getElementById(
@@ -497,7 +518,7 @@ window.onload = function () {
         voting(court_like_num, court_dislike_num);
     }
 
-    if (window.location.href.indexOf("len_harlen_park.html") > -1) {
+    if (pageContains("len_harlen_park.html")) {
         court_like_num = document.getElementById("like_number").innerHTML =
             courts[11].thumbs_up;
         court_dislike_num = document.getElementById(
