@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <!--Set language of webpage-->
 <html lang="en">
-<!--Head Section-->
+    <!--Head Section-->
     <head>
         <!--Set character set and viewport-->
-        <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!--Clears cache improves github pages update time-->
-        <meta http-equiv='cache-control' content='no-cache'> 
-        <meta http-equiv='expires' content='0'> 
-        <meta http-equiv='pragma' content='no-cache'>
-	    <!--Webpage title-->
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <!--Webpage title-->
         <title>Home | Public Basketball Courts in Hawkes Bay</title>
         <!--Webpage description-->
-        <meta name ='description' content='Basketball court finder website that provides information about public basketball courts specifically in Hawkes Bay, New Zealand.'>
+        <meta
+            name="description"
+            content="Basketball court finder website that provides information about public basketball courts specifically in Hawkes Bay, New Zealand."
+        />
         <!--Links external stylesheet-->
-        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css" />
         <!--Links favicon-->
-        <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
         <!--Links google fonts-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
         <!--Links font awesome fonts-->
-        <script src="https://kit.fontawesome.com/bf5be420c0.js" crossorigin="anonymous"></script>
+        <script
+            src="https://kit.fontawesome.com/bf5be420c0.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <!--Body section-->
     <body>
@@ -31,34 +40,48 @@
         <header>
             <div class="header_image">
                 <!--Header image-->
-                <img src="Images/basketball_icon.webp" alt="Basketball icon">
+                <img src="Images/basketball_icon.webp" alt="Basketball icon" />
             </div>
             <div class="header_text">
                 <!--Header text-->
                 <h1>Public Basketball Courts in Hawkes Bay</h1>
-            </div>       
+            </div>
         </header>
         <!--Navigation section-->
         <div class="nav" id="top_nav">
-            <a href="index.html" class="active">Home</a>
+            <a href="/" class="active">Home</a>
             <a href="napier.html">Napier</a>
             <a href="hastings.html">Hastings</a>
             <a href="wairoa.html">Wairoa</a>
             <a href="central_hawkes_bay.html">Central Hawkes Bay</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="openMenu()">&#9776;</a>
+            <a
+                href="javascript:void(0);"
+                style="font-size: 15px"
+                class="icon"
+                onclick="openMenu()"
+                >&#9776;</a
+            >
         </div>
         <!--Main section-->
         <main>
             <!--Section 1-->
             <div class="section_1">
                 <!--Title text-->
-                <h1 class="home_title">Find Public Basketball Courts in Hawkes Bay</h1>
-                <br>
+                <h1 class="home_title">
+                    Find Public Basketball Courts in Hawkes Bay
+                </h1>
+                <br />
                 <!--Search box-->
                 <div class="search_box">
-                    <input type="text" placeholder="Enter a court or place name" aria-label="Search courts" class="search" onkeyup="searchFilter()">
+                    <input
+                        type="text"
+                        placeholder="Enter a court or place name"
+                        aria-label="Search courts"
+                        class="search"
+                        onkeyup="searchFilter()"
+                    />
                 </div>
             </div>
             <!--Section 2-->
@@ -77,26 +100,39 @@
                 <!--Top rated courts-->
                 <div id="top_3_courts" class="courts_box"></div>
             </div>
-            <br>
-            <p class="disclaimer_text">All images used on this website, are used for educational purposes</p>
+            <br />
+            <p class="disclaimer_text">
+                All images used on this website, are used for educational
+                purposes
+            </p>
         </main>
         <!--Footer section-->
         <footer>
             <div class="footer">
-                <br>
+                <br />
                 <p>Our Social Media</p>
-                <br>
+                <br />
                 <!--Social media icons-->
                 <div class="footer_icons">
-                    <a href="https://facebook.com//"><i class="fa-brands fa-facebook fa-2x"></i></a>
-                    <span style=cursor:default;>&nbsp;&nbsp;&nbsp;</span>
-                    <a href="https://instagram.com//"><i class="fa-brands fa-instagram fa-2x"></i></a>
-                    <span style=cursor:default;>&nbsp;&nbsp;&nbsp;</span>
-                    <a href="https://youtube.com//"><i class="fa-brands fa-youtube fa-2x"></i></a>
-                    <span style=cursor:default;>&nbsp;&nbsp;&nbsp;</span>
-                    <a href="https://snapchat.com//"><i class="fa-brands fa-snapchat fa-2x"></i></a>
-                    <span style=cursor:default;>&nbsp;&nbsp;&nbsp;</span>
-                    <a href="https://twitter.com/"><i class="fa-brands fa-twitter fa-2x"></i></a>
+                    <a href="https://facebook.com//"
+                        ><i class="fa-brands fa-facebook fa-2x"></i
+                    ></a>
+                    <span style="cursor: default">&nbsp;&nbsp;&nbsp;</span>
+                    <a href="https://instagram.com//"
+                        ><i class="fa-brands fa-instagram fa-2x"></i
+                    ></a>
+                    <span style="cursor: default">&nbsp;&nbsp;&nbsp;</span>
+                    <a href="https://youtube.com//"
+                        ><i class="fa-brands fa-youtube fa-2x"></i
+                    ></a>
+                    <span style="cursor: default">&nbsp;&nbsp;&nbsp;</span>
+                    <a href="https://snapchat.com//"
+                        ><i class="fa-brands fa-snapchat fa-2x"></i
+                    ></a>
+                    <span style="cursor: default">&nbsp;&nbsp;&nbsp;</span>
+                    <a href="https://twitter.com/"
+                        ><i class="fa-brands fa-twitter fa-2x"></i
+                    ></a>
                 </div>
             </div>
         </footer>

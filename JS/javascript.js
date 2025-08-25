@@ -135,11 +135,12 @@ function displayCourts() {
 
 // top rated courts function
 function topRated() {
-    // Takes top 3 rated courts from courts array
-    let Top3RatedCourts = courts.slice(0, 3);
-    // Initalize variable
+    // Make sure courts are sorted before slicing
+    let Top3RatedCourts = [...courts]
+        .sort((a, b) => b.thumbs_up - a.thumbs_up)
+        .slice(0, 3);
+
     let htmlContent = "";
-    // Loop through each court in Top3RatedCourts array and add html content with parsed values to courtContent
     for (let i = 0; i < Top3RatedCourts.length; i++) {
         let courtContent = `
             <div class="top_3_courts">
@@ -158,7 +159,6 @@ function topRated() {
         htmlContent += courtContent;
     }
 
-    // Apply htmlContent to courts_box innerHTML
     document.getElementById("top_3_courts").innerHTML = htmlContent;
 }
 
