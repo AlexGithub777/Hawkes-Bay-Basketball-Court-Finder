@@ -103,17 +103,24 @@ function isHomePage() {
     const pathname = window.location.pathname;
     const filename = pathname.split("/").pop();
 
-    // Check multiple conditions for home page
-    return (
-        pathname === "/" || // Root path
-        pathname === "" || // Empty path
-        filename === "index.html" || // Direct index.html
-        filename === "" || // Ends with slash
-        (!filename.includes(".") && pathname.endsWith("/")) || // Directory with trailing slash
-        pathname === "/index.html" || // Absolute index.html
-        // For GitHub Pages - check if we're at the repo root
-        (pathname.match(/^\/[^\/]+\/$/) && !filename.includes("."))
-    );
+    // Debug logging - remove this after fixing
+    console.log("Debug - pathname:", pathname);
+    console.log("Debug - filename:", filename);
+    console.log("Debug - href:", window.location.href);
+    console.log("Debug - hostname:", window.location.hostname);
+
+    // For custom domains, check simple patterns
+    const isHome =
+        pathname === "/" || // Root path (most common for custom domains)
+        pathname === "/index.html" || // Direct index.html
+        filename === "index.html" || // Just index.html filename
+        filename === "" || // Empty filename (root or trailing slash)
+        // Fallback: if we have the required DOM elements, assume it's home
+        (document.getElementById("courts_box") &&
+            document.getElementById("top_3_courts"));
+
+    console.log("Debug - isHome result:", isHome);
+    return isHome;
 }
 
 // Helper function to check if URL contains a specific page name
@@ -390,11 +397,33 @@ function voting(court_like_num, court_dislike_num) {
 
 // Load functions when for webpages
 window.onload = function () {
-    // Home page detection - using the robust helper function
-    if (isHomePage()) {
+    // For custom domain, simple check first
+    const pathname = window.location.pathname;
+    console.log("Loading page:", pathname);
+
+    // Home page: root or index.html
+    if (
+        pathname === "/" ||
+        pathname === "/index.html" ||
+        pathname.endsWith("index.html")
+    ) {
+        console.log(
+            "Home page detected - running displayCourts() and topRated()"
+        );
         displayCourts();
         topRated();
-        return; // Exit early to avoid checking other conditions
+        return;
+    }
+
+    // Fallback: Check if we have home page elements and run functions
+    const hasHomeElements =
+        document.getElementById("courts_box") &&
+        document.getElementById("top_3_courts");
+    if (hasHomeElements && !pageContains(".html")) {
+        console.log("Home page detected via DOM elements");
+        displayCourts();
+        topRated();
+        return;
     }
 
     // City-specific pages
